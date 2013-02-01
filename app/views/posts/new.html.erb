@@ -1,0 +1,9 @@
+<h2>New post</h2>
+
+<% if can? :create, @post %>
+  <%= render 'form' %>
+<% else %>
+  <p>You don't have permission to create posts!</p>
+<% end %>
+
+<%= link_to 'Back', posts_path %>

@@ -1,0 +1,359 @@
+GIT
+  remote: git://github.com/aussiegeek/rubyzip.git
+  revision: a64b01fe96b839bd30fffb614415309531e95cd1
+  specs:
+    rubyzip (0.9.9)
+
+GIT
+  remote: git://github.com/carlhuda/bundler.git
+  revision: 7a0aaccbd58c8eb4874d2978daa4115cf0bf6c43
+  branch: 1-2-stable
+  specs:
+
+GIT
+  remote: git://github.com/cowboyd/therubyrhino.git
+  revision: 82134aecf2d2d8fd56576614397cf6b9b3d009cb
+  specs:
+    therubyrhino (2.0.1)
+      therubyrhino_jar (>= 1.7.3)
+
+GIT
+  remote: git://github.com/flori/json
+  revision: e3c6a7c7fee695b45b9cd2bf062138bcc54b2d28
+  specs:
+    json (1.7.5)
+
+GIT
+  remote: git://github.com/intridea/multi_json.git
+  revision: 1aac1a3d116589cd8a859b7e861653d4eb4c71fc
+  specs:
+    multi_json (1.3.7)
+
+GIT
+  remote: git://github.com/josh/ruby-coffee-script.git
+  revision: a6f0f583cedd9d6ceb4c949fa03b3913620a847c
+  specs:
+    coffee-script (2.2.0)
+      coffee-script-source
+      execjs
+
+GIT
+  remote: git://github.com/lautis/uglifier.git
+  revision: 2f6c31a67d6dbd04c3153603339fab49a06ec4ec
+  specs:
+    uglifier (1.3.0)
+      execjs (>= 0.3.0)
+      multi_json (~> 1.0, >= 1.0.2)
+
+GIT
+  remote: git://github.com/net-ssh/net-scp.git
+  revision: 3e61a9be89b9fd584604568e46993f48006d86f8
+  specs:
+    net-scp (1.0.4)
+      net-ssh (>= 1.99.1)
+
+GIT
+  remote: git://github.com/net-ssh/net-ssh-multi.git
+  revision: 37d612c01f8dd8e7a6ac72a533efbc83d8c74f4a
+  specs:
+    net-ssh-multi (1.1)
+      net-ssh (>= 2.1.4)
+      net-ssh-gateway (>= 0.99.0)
+
+GIT
+  remote: git://github.com/net-ssh/net-ssh.git
+  revision: 6e8d26da589de514374bf5a1786800341109f5ef
+  specs:
+    net-ssh (2.6.1)
+
+GIT
+  remote: git://github.com/plataformatec/devise.git
+  revision: 96a0477555f6683d71d334bb23e45c8e23cb6468
+  specs:
+    devise (2.1.2)
+      bcrypt-ruby (~> 3.0)
+      orm_adapter (~> 0.1)
+      railties (~> 3.1)
+      warden (~> 1.2.1)
+
+GIT
+  remote: git://github.com/rails/coffee-rails.git
+  revision: c8f3df3369f0d5b32dbc57cf3fd575b50d106563
+  branch: 3-2-stable
+  specs:
+    coffee-rails (3.2.2)
+      coffee-script (>= 2.2.0)
+      railties (~> 3.2.0)
+
+GIT
+  remote: git://github.com/rails/jquery-rails.git
+  revision: b6444a380b5810a69a90a82e0409771b29be28c1
+  specs:
+    jquery-rails (2.1.4)
+      railties (>= 3.0, < 5.0)
+      thor (~> 0.14)
+
+GIT
+  remote: git://github.com/rails/rails.git
+  revision: 1337e9284c038de8f0ea8a2de0d03efa630ea057
+  branch: 3-2-stable
+  specs:
+    actionmailer (3.2.11)
+      actionpack (= 3.2.11)
+      mail (~> 2.5.3)
+    actionpack (3.2.11)
+      activemodel (= 3.2.11)
+      activesupport (= 3.2.11)
+      builder (~> 3.0.0)
+      erubis (~> 2.7.0)
+      journey (~> 1.0.4)
+      rack (~> 1.4.3)
+      rack-cache (~> 1.2)
+      rack-test (~> 0.6.1)
+      sprockets (~> 2.2.1)
+    activemodel (3.2.11)
+      activesupport (= 3.2.11)
+      builder (~> 3.0.0)
+    activerecord (3.2.11)
+      activemodel (= 3.2.11)
+      activesupport (= 3.2.11)
+      arel (~> 3.0.2)
+      tzinfo (~> 0.3.29)
+    activeresource (3.2.11)
+      activemodel (= 3.2.11)
+      activesupport (= 3.2.11)
+    activesupport (3.2.11)
+      i18n (~> 0.6)
+      multi_json (~> 1.0)
+    rails (3.2.11)
+      actionmailer (= 3.2.11)
+      actionpack (= 3.2.11)
+      activerecord (= 3.2.11)
+      activeresource (= 3.2.11)
+      activesupport (= 3.2.11)
+      bundler (~> 1.0)
+      railties (= 3.2.11)
+    railties (3.2.11)
+      actionpack (= 3.2.11)
+      activesupport (= 3.2.11)
+      rack-ssl (~> 1.3.2)
+      rake (>= 0.8.7)
+      rdoc (~> 3.4)
+      thor (>= 0.14.6, < 2.0)
+
+GIT
+  remote: git://github.com/rails/sass-rails.git
+  revision: bdfeb7ba71eae9ab0b214190319e109bbb0a9fe7
+  branch: 3-2-stable
+  specs:
+    sass-rails (3.2.5)
+      railties (~> 3.2.0)
+      sass (>= 3.1.10)
+      tilt (~> 1.3)
+
+GIT
+  remote: git://github.com/rspec/rspec-core.git
+  revision: 4d881e82092b0da58771271c4c0ae74cfc6faf3e
+  specs:
+    rspec-core (2.12.0)
+
+GIT
+  remote: git://github.com/rspec/rspec-expectations.git
+  revision: 5baaccafec67c23f563627eac7363d39aa4d7619
+  specs:
+    rspec-expectations (2.12.0)
+      diff-lcs (~> 1.1.3)
+
+GIT
+  remote: git://github.com/rspec/rspec-mocks.git
+  revision: c1af6e8e0e9b46afa611dee9e00d6780e134b7a8
+  specs:
+    rspec-mocks (2.12.0)
+
+GIT
+  remote: git://github.com/rspec/rspec-rails.git
+  revision: 74d01ec34c29669df340ccf467409f0e76a04b06
+  specs:
+    rspec-rails (2.12.0)
+      actionpack (>= 3.0)
+      activesupport (>= 3.0)
+      railties (>= 3.0)
+      rspec-core (~> 2.12.0)
+      rspec-expectations (~> 2.12.0)
+      rspec-mocks (~> 2.12.0)
+
+GIT
+  remote: git://github.com/rspec/rspec.git
+  revision: b8e9f832cc56966ff48c47d5ec1f918c38986380
+  specs:
+    rspec (2.12.0)
+      rspec-core (~> 2.12.0)
+      rspec-expectations (~> 2.12.0)
+      rspec-mocks (~> 2.12.0)
+
+GIT
+  remote: git://github.com/ryanb/cancan.git
+  revision: 4dcd5445948216bb2796e27c6b78d418993a179f
+  specs:
+    cancan (1.6.8)
+
+GIT
+  remote: git://github.com/sstephenson/execjs.git
+  revision: 1e87b3735176c6e656e4b5ba18ed10214b321ba5
+  specs:
+    execjs (1.4.0)
+      multi_json (~> 1.0)
+
+GIT
+  remote: git://github.com/thoughtbot/paperclip.git
+  revision: 567086e102ee3a9265cece1fd0f07d7ee435febf
+  specs:
+    paperclip (3.3.1)
+      activemodel (>= 3.0.0)
+      activerecord (>= 3.0.0)
+      activesupport (>= 3.0.0)
+      cocaine (~> 0.4.0)
+      mime-types
+
+GIT
+  remote: https://github.com/joshfrench/rakismet.git
+  revision: bfe56ec0adaaaedae033b2056ce55754861f3658
+  specs:
+    rakismet (1.2.1)
+
+GEM
+  remote: http://rubygems.org/
+  specs:
+    RedCloth (4.2.9)
+    addressable (2.3.2)
+    arel (3.0.2)
+    bcrypt-ruby (3.0.1)
+    bigdecimal (1.1.0)
+    builder (3.0.4)
+    capistrano (2.14.1)
+      highline
+      net-scp (>= 1.0.0)
+      net-sftp (>= 2.0.0)
+      net-ssh (>= 2.0.14)
+      net-ssh-gateway (>= 1.1.0)
+    capybara (2.0.0)
+      mime-types (>= 1.16)
+      nokogiri (>= 1.3.3)
+      rack (>= 1.0.0)
+      rack-test (>= 0.5.4)
+      selenium-webdriver (~> 2.0)
+      xpath (~> 1.0.0)
+    childprocess (0.3.6)
+      ffi (~> 1.0, >= 1.0.6)
+    cocaine (0.4.2)
+    coffee-script-source (1.4.0)
+    diff-lcs (1.1.3)
+    erubis (2.7.0)
+    ffi (1.1.5)
+    highline (1.6.15)
+    hike (1.2.1)
+    i18n (0.6.1)
+    journey (1.0.4)
+    libv8 (3.3.10.4)
+    libwebsocket (0.1.5)
+      addressable
+    mail (2.5.3)
+      i18n (>= 0.4.0)
+      mime-types (~> 1.16)
+      treetop (~> 1.4.8)
+    mime-types (1.19)
+    mysql2 (0.3.11)
+    net-sftp (2.0.5)
+      net-ssh (>= 2.0.9)
+    net-ssh-gateway (1.1.0)
+      net-ssh (>= 1.99.1)
+    nokogiri (1.5.5)
+    orm_adapter (0.4.0)
+    polyglot (0.3.3)
+    rack (1.4.4)
+    rack-cache (1.2)
+      rack (>= 0.4)
+    rack-ssl (1.3.3)
+      rack
+    rack-test (0.6.2)
+      rack (>= 1.0)
+    rake (10.0.1)
+    rdoc (3.12)
+      json (~> 1.4)
+    sass (3.2.3)
+    selenium-webdriver (2.26.0)
+      childprocess (>= 0.2.5)
+      libwebsocket (~> 0.1.3)
+      multi_json (~> 1.0)
+      rubyzip
+    sprockets (2.2.1)
+      hike (~> 1.2)
+      multi_json (~> 1.0)
+      rack (~> 1.0)
+      tilt (~> 1.1, != 1.3.0)
+    therubyracer (0.10.2)
+      libv8 (~> 3.3.10)
+    therubyrhino_jar (1.7.3)
+    thor (0.16.0)
+    tilt (1.3.3)
+    treetop (1.4.12)
+      polyglot
+      polyglot (>= 0.3.1)
+    tzinfo (0.3.35)
+    warden (1.2.1)
+      rack (>= 1.0)
+    xpath (1.0.0)
+      nokogiri (~> 1.3)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  RedCloth
+  addressable
+  bcrypt-ruby
+  bigdecimal
+  bundler!
+  cancan!
+  capistrano
+  capybara
+  coffee-rails!
+  coffee-script!
+  devise!
+  diff-lcs
+  execjs!
+  ffi
+  highline
+  jquery-rails!
+  json!
+  libv8
+  multi_json!
+  mysql2
+  net-scp!
+  net-sftp
+  net-ssh!
+  net-ssh-gateway
+  net-ssh-multi!
+  nokogiri
+  paperclip!
+  rack
+  rack-cache
+  rack-ssl
+  rails!
+  railties!
+  rake
+  rakismet!
+  rdoc
+  rspec!
+  rspec-core!
+  rspec-expectations!
+  rspec-mocks!
+  rspec-rails!
+  rubyzip!
+  sass
+  sass-rails!
+  selenium-webdriver
+  sprockets
+  therubyracer
+  therubyrhino!
+  uglifier!

@@ -1,0 +1,8 @@
+<h1>Editing gallery</h1>
+
+<% if can? :update, @gallery %>
+  <%= render 'form' %>
+<% end %>
+
+<%= link_to 'Show', @gallery %> |
+<%= link_to 'Back', galleries_path %>

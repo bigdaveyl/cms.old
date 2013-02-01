@@ -1,0 +1,22 @@
+<p>
+  <b>Title:</b>
+  <%= gallery.title %>
+</p>
+
+<div class="thumb">
+  <% for asset in gallery.galleryphotos %>
+    <%= link_to image_tag(asset.photo.url(:thumb)), gallery_galleryphoto_path(gallery, asset) %>
+  <% end %>
+</div>
+
+<p>
+  <b>Description:</b>
+  <%= gallery.description %>
+</p>
+
+<% if can? :update, gallery %>
+    <%= link_to 'Edit', edit_gallery_path(gallery) %> |
+<% end %>
+<% if can? :delete, gallery %>
+    <%= link_to 'Destroy', gallery, :confirm => 'Are you sure?', :method => :delete %>
+<% end %>

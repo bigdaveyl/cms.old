@@ -1,0 +1,9 @@
+<h1>New gallery</h1>
+
+<% if can? :create, @gallery %>
+  <%= render 'form' %>
+<% else %>
+  <p>You don't have permission to create galleries!</p>
+<% end %>
+
+<%= link_to 'Back', galleries_path %>

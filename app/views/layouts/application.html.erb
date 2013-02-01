@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Dave's Homepage :: <%= @title %></title>
+    <meta charset="UTF-8">
+    <%= stylesheet_link_tag "application" %>
+    <%= javascript_include_tag "application" %>
+    <%= javascript_include_tag "http://apis.google.com/js/plusone.js" %>
+    <%= javascript_include_tag "http://static.ak.fbcdn.net/connect.php/js/FB.Share" %>
+    <%= javascript_include_tag "http://platform.linkedin.com/in.js" %>
+    <%= csrf_meta_tag %>
+    <%= auto_discovery_link_tag :atom, posts_path(:format => :atom) %>
+    <%= auto_discovery_link_tag :rss, posts_path(:format => :rss) %>
+    <script language="javascript">
+      $(document).ready(function() {
+        $('#textile').markItUp(myTextileSettings);
+      });
+    </script>
+  </head>
+  <body>
+
+    <div id="login">
+      <% if user_signed_in? %>
+        Welcome <%= current_user.username %> - <%= link_to 'logout', destroy_user_session_path, :method => :delete %>
+      <% else %>
+        <%= link_to 'login', new_user_session_path %>
+      <% end %>
+    </div>
+  
+    <div id="frame">
+      <div id="header">
+      <h1>Dave's Homepage</h1>
+      <%= link_to "Home", home_index_path, :class => "navlink" %>
+      <%= link_to "Blog", posts_path, :class => "navlink" %>
+      <%= link_to "Photo Gallery", galleries_path, :class => "navlink" %>
+      <%= link_to "About Me", home_aboutme_path, :class => "navlink" %>
+      <%= link_to "Presentations", home_presentations_path, :class => "navlink" %>
+      <%= link_to "Contact", home_contact_path, :class => "navlink" %>
+      </div>
+  
+      <div id="columnAll">
+        <p class="notice"><%= notice %></p>
+        <p class="alert"><%= alert %></p>
+        <%= yield %>
+      </div>
+  
+      <div id="footer">
+
+        <%=
+          link_to(image_tag("http://jigsaw.w3.org/css-validator/images/vcss", :alt => "Valid CSS!", :border => "0"), "http://jigsaw.w3.org/css-validator/check/referer")
+        %>
+        <%=
+          link_to(image_tag("valid-rss-rogers.png", :alt => "[Valid RSS]", :title => "Validate my RSS feed", :border => "0"),
+            "http://feed1.w3.org/check.cgi?url=http%3A//www.thelinuxgeek.org/posts.rss")
+        %>
+        <%=
+           link_to(image_tag("valid-atom.png", :alt => "[Valid Atom 1.0]", :title => "Validate my Atom 1.0 feed", :border => "0"), 
+             "http://feed2.w3.org/check.cgi?url=http%3A//www.thelinuxgeek.org/posts.atom")
+        %>
+        <p>Copyright 2011 David Liana</p>
+      </div>
+    </div>
+  </body>
+</html>

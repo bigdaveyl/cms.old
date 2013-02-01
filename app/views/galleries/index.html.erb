@@ -1,0 +1,5 @@
+<%= render :partial => @galleries %>
+
+<% if can? :create, Gallery %>
+  <p><%= link_to 'New Gallery', new_gallery_path %></p>
+<% end %>

@@ -1,0 +1,49 @@
+﻿David Liana		
+Homepage: http://www.thelinuxgeek.org
+E-mail:  dliana@frontiernet.net
+
+Objective
+To secure a job in the computer science or information technology field, preferably in software design/engineering or system administration.
+
+Education
+MS Computational Science - S.U.N.Y. College at Brockport – Graduated May 2003
+Project:  Configured a source-based Linux distribution on a cluster and studied the performance gains
+Classwork in embedded software, scientific/mathematical computing, parallel computing using MPI
+Languages used:  C, MATLAB
+BS Computer Science -  S.U.N.Y. College at Brockport – Graduated December 2001
+Spent a semester abroad at the University of St. Andrews in Scotland
+Languages used:  C, C++, Java
+Coursework included algorithm design/analysis, UNIX, web programming, OS concepts, networking
+
+Qualifications
+Computer Skills
+Familiar with Quantum, SPSS, BASH Shell Scripting, HTML
+Basic knowledge of SQL, database design, C, C++, PHP, MATLAB, MPI and Java
+Experienced in the installation, configuration and usage of Microsoft Windows, Mac OS and various Linux distributions 
+Knowledge of PC Hardware
+Networking – setup of DNS, DHCP, Samba, NFS
+Initiative
+Enjoy and willing to learning new things about computing, programming and problem solving
+Currently teaching myself Ruby on Rails
+Contributes to department initiatives at Harris Interactive
+Member of local computer user groups
+
+Communication
+Tutored students in Computer Science while a graduate student at Brockport
+Help people in user groups solve problems
+Provide feedback and bug reports for open source software projects
+Trained domestic programmers and spent a month training new hires at an offshore vendor in India for Harris Interactive
+
+Related Work Experience
+
+Senior Programmer, Harris Interactive; Rochester NY — 2/2003 - Present
+Responsible for cleaning, tabulation, weighting and verification of deliverables using Quantum and SPSS in a UNIX environment. Learned Quantum and SPSS on the job.
+Tutor, SUNY College at Brockport; Brockport, NY — 2002
+Tutored student’s one-on-one in various computer science courses.  Helped students with C++, problem solving and debugging of programs.  Also managed a small computer lab as part of my duties.
+Co-op, Eastman Kodak Company; Rochester, NY — 6/2000 - 8/2000
+Assisted team members in the programming of web applications using Visual Basic 6 and SQL Server.
+Intern, Newman Center; Brockport, NY — 9/1998-8/1999
+Set-up and updated informational web pages.  Trained the staff on how to perform updates.
+References   Available upon request.
+
+

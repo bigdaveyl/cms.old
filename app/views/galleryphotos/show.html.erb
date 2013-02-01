@@ -1,0 +1,7 @@
+<p><%= link_to 'Back to Gallery', url_for(@gallery) %>
+<%= link_to("Previous Photo", gallery_galleryphoto_path(@gallery, @galleryphoto.previous_photo )) if @galleryphoto.previous_photo %>
+<%= link_to("Next Photo", gallery_galleryphoto_path(@gallery, @galleryphoto.next_photo )) if @galleryphoto.next_photo %>
+</p>
+
+<%= image_tag(@galleryphoto.photo.url(:large), :class => "image-center") %>
+<p><%= link_to 'Back to Gallery', url_for(@gallery) %></p>

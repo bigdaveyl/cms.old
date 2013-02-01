@@ -1,0 +1,10 @@
+<% if can? :update, @post %>
+  <h2>Editing post</h2>
+
+  <%= render 'form' %>
+<% else %>
+  <p>You don't have permission to edit posts!</p>
+<% end %>
+
+<%= link_to 'Show', @post %> |
+<%= link_to 'Back', posts_path %>

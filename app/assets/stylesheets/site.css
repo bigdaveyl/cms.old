@@ -1,0 +1,107 @@
+body
+{
+	width: 900px;
+	margin: auto;
+	background-color: #343434;
+	padding-top:  20px;
+}
+
+#frame
+{
+	background-color: white;
+	clear: both;
+}
+
+
+#header
+{
+	background-color: maroon;
+	color: white;
+	border-bottom: 1px solid black;
+	padding: 2px;
+	
+}
+
+#columnLeft {
+	float: left;
+	background-color: white;
+	width: 150px;
+	padding: 5px;
+}
+
+#columnAll {
+	background-color: white;
+	padding: 5px;
+}
+
+#columnRight
+{
+	margin-left: 175px;
+	background-color: white;
+	padding: 5px;
+}
+
+#footer
+{
+	clear: both;
+	background-color: #D3D3D3;
+	border-top: 1px solid black;
+	padding: 5px;
+	text-align: right;
+}
+
+#login
+{
+	color:  white;
+	text-align:  right;
+}
+
+#login a
+{
+	color:  white;
+}
+
+a.navlink
+{
+	padding: 10px;
+}
+
+a.navlink:link
+{
+	color: white;
+	text-decoration:none;
+}
+
+a.navlink:visited
+{
+	color: white;
+	text-decoration:none;
+}
+
+.notice {
+  color: green; 
+}
+
+.alert {
+  color: red; 
+}
+
+#navlist li
+{
+	list-style-type:none;
+	padding: 5px;
+}
+
+.left {
+	float: left;
+}
+
+.right {
+	float: right;
+}
+
+.image-center {
+	display: block;
+	margin-left: auto;
+        margin-right: auto
+}
