@@ -21,19 +21,20 @@ gem 'railties',   :git => 'git://github.com/rails/rails.git', :branch => '3-2-st
 
 gem 'mysql2'
 
-gem 'json',       :git => 'git://github.com/flori/json'
-gem 'multi_json', :git => 'git://github.com/intridea/multi_json.git'
+gem 'json'
+gem 'multi_json'
 
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
   gem 'sass'
-  gem 'sass-rails',     :git => 'git://github.com/rails/sass-rails.git',   :branch => '3-2-stable'
+  gem 'sass-rails', '3.2.5'
   gem 'coffee-script',  :git => 'git://github.com/josh/ruby-coffee-script.git'
   gem 'coffee-rails',   :git => 'git://github.com/rails/coffee-rails.git', :branch => '3-2-stable'
   gem 'uglifier',       :git => 'git://github.com/lautis/uglifier.git'
   gem 'execjs',         :git => 'git://github.com/sstephenson/execjs.git'
   gem 'therubyrhino',   :git => 'git://github.com/cowboyd/therubyrhino.git'
+  gem 'therubyracer'
 end
 
 gem 'jquery-rails', :git => 'git://github.com/rails/jquery-rails.git' 
@@ -48,11 +49,11 @@ gem 'bcrypt-ruby'
 # Deploy with Capistrano
 gem 'net-ssh',         :git => 'git://github.com/net-ssh/net-ssh.git'
 gem 'net-ssh-gateway'
-gem 'net-ssh-multi',   :git => 'git://github.com/net-ssh/net-ssh-multi.git'
+gem 'net-ssh-multi'
 gem 'net-sftp'
-gem 'net-scp',         :git => 'git://github.com/net-ssh/net-scp.git'
-#gem 'capistrano',      :git => 'git://github.com/capistrano/capistrano.git'
-gem 'capistrano'
+#gem 'net-scp',         :git => 'git://github.com/net-ssh/net-scp.git'
+gem 'net-scp'
+gem 'capistrano', '2.15.5'
 
 # To use debugger
 # gem 'ruby-debug19'
@@ -62,36 +63,45 @@ gem 'diff-lcs'
 
 gem 'RedCloth'
 
-gem 'devise',        :git => 'git://github.com/plataformatec/devise.git'
+gem 'devise'
+gem 'devise-encryptable'
 
-gem 'bundler',       :git => 'git://github.com/carlhuda/bundler.git', :branch => '1-2-stable'
+gem 'bundler'
 
 gem 'highline'
 
 group :test, :development do
-  gem 'rspec',              :git => 'git://github.com/rspec/rspec.git'
-  gem 'rspec-core',         :git => 'git://github.com/rspec/rspec-core.git'
-  gem 'rspec-mocks',        :git => 'git://github.com/rspec/rspec-mocks.git'
-  gem 'rspec-expectations', :git => 'git://github.com/rspec/rspec-expectations.git'
-  gem 'rspec-rails',        :git => 'git://github.com/rspec/rspec-rails.git'
+  gem 'rspec'
+  gem 'rspec-core'
+  gem 'rspec-mocks'
+  gem 'rspec-expectations'
+  gem 'rspec-rails'
+  gem 'rspec-support'
   gem 'capybara'
-  gem 'therubyracer'
+  gem 'factory_girl'
+  gem 'factory_girl_rails'
+  gem 'guard-rspec'
+  gem 'launchy'
+  gem 'faker'
+  gem 'sqlite3'
 end
 
 gem 'execjs',         :git => 'git://github.com/sstephenson/execjs.git'
 gem 'libv8'
+gem 'therubyrhino',   :git => 'git://github.com/cowboyd/therubyrhino.git'
+gem 'therubyracer'
 
 gem 'cancan',      :git => 'git://github.com/ryanb/cancan.git'
 
 gem 'bigdecimal'
 
 gem 'nokogiri'
-gem 'rubyzip',     :git => 'git://github.com/aussiegeek/rubyzip.git'
+gem 'rubyzip', '0.9.9'
 gem 'addressable'
 gem 'ffi'
 
 gem 'rdoc'
-gem 'selenium-webdriver'
+gem 'selenium-webdriver', '2.26.0'
 
 gem 'paperclip',   :git => 'git://github.com/thoughtbot/paperclip.git'
 

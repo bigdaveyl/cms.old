@@ -5,9 +5,6 @@
     <meta charset="UTF-8">
     <%= stylesheet_link_tag "application" %>
     <%= javascript_include_tag "application" %>
-    <%= javascript_include_tag "http://apis.google.com/js/plusone.js" %>
-    <%= javascript_include_tag "http://static.ak.fbcdn.net/connect.php/js/FB.Share" %>
-    <%= javascript_include_tag "http://platform.linkedin.com/in.js" %>
     <%= csrf_meta_tag %>
     <%= auto_discovery_link_tag :atom, posts_path(:format => :atom) %>
     <%= auto_discovery_link_tag :rss, posts_path(:format => :rss) %>
@@ -16,6 +13,7 @@
         $('#textile').markItUp(myTextileSettings);
       });
     </script>
+    <%= render 'layouts/footer' %>
   </head>
   <body>
 

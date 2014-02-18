@@ -6,12 +6,6 @@ by <%= post.user.username %> <%= post.created_at.strftime("on %A, %B %d %Y at %H
 <%= raw post.body%>
 </p>
 
-<table border="0">
-  <tr>
-    <td><g:plusone count="false"></g:plusone></td>
-  </tr>
-</table>
-
 <% if can? :update, post %>
     <%= link_to 'Edit', edit_post_path(post) %> |
 <% end %>

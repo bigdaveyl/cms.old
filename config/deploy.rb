@@ -1,15 +1,15 @@
 require 'bundler/capistrano'
 
 set :default_environment, {
-  'PATH'         => "/opt/ruby/gems/bin:/sbin:/bin:/usr/sbin:/usr/bin:/usr/games:/usr/local/sbin:/usr/local/bin:/home/webpages/bin",
-  'RUBY_VERSION' => 'ruby 1.9.3',
+  'PATH'         => "/opt/ruby/gems/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games",
+  'RUBY_VERSION' => 'ruby 2.0.0',
   'GEM_HOME'     => '/opt/ruby/gems',
-  'GEM_PATH'     => '/opt/ruby/gems',
+  'GEM_PATH'     => '/usr/local/lib/ruby/gems/2.0.0:/opt/ruby/gems',
   'BUNDLE_PATH'  => '/opt/ruby/gems',
   'LANG'         => 'en_US.UTF-8'
 }
 
-set :bundle_cmd,          '/opt/ruby/gems/bin/bundle'
+set :bundle_cmd,          '/usr/local/bin/bundle'
 set :bundle_gemfile,      'Gemfile'
 set :bundle_dir,          ''
 set :bundle_flags,        ''
@@ -32,14 +32,12 @@ set :checkout, 'export'
 set :user, 'webpages' # Your username goes here
 set :use_sudo, false
 set :domain, 'c7vv.x.rootbsd.net' # Your domain goes here
-set :applicationdir, "/usr/local/www/#{application}"
+set :applicationdir, "/webapps/#{application}"
 set :deploy_to, applicationdir
 
 role :web, domain                 
 role :app, domain                          
 role :db,  domain, :primary => true
-
-load 'deploy/assets'
 
 # if you're still using the script/reaper helper you will need
 # these http://github.com/rails/irs_process_scripts
