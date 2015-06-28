@@ -8,46 +8,47 @@ source 'http://rubygems.org'
 gem 'rack'
 gem 'rack-cache'
 gem 'rack-ssl'
-gem 'sprockets'
+#gem 'sprockets'
+gem 'sprockets', '~> 2.8'
 
 gem 'rake'
 
-#gem 'rails', ">=3.2.11", "<3.3.0" 
 #gem 'railties', ">=3.2.11", "<3.3.0" 
 
 # Bundle edge Rails instead:
-gem 'rails',      :git => 'git://github.com/rails/rails.git', :branch => '3-2-stable'
-gem 'railties',   :git => 'git://github.com/rails/rails.git', :branch => '3-2-stable'
+gem 'rails',      :git => 'git://github.com/rails/rails.git', :branch => '4-2-stable'
+#gem 'railties',   :git => 'git://github.com/rails/rails.git', :branch => '4-2-stable'
 
 gem 'mysql2'
 
-gem 'json'
-gem 'multi_json'
+gem 'json', ">=1.8.2"
 
 # Gems used only for assets and not required
 # in production environments by default.
-group :assets do
-  gem 'sass'
-  gem 'sass-rails', '3.2.5'
-  gem 'coffee-script',  :git => 'git://github.com/josh/ruby-coffee-script.git'
-  gem 'coffee-rails',   :git => 'git://github.com/rails/coffee-rails.git', :branch => '3-2-stable'
-  gem 'uglifier',       :git => 'git://github.com/lautis/uglifier.git'
-  gem 'execjs',         :git => 'git://github.com/sstephenson/execjs.git'
-  gem 'therubyrhino',   :git => 'git://github.com/cowboyd/therubyrhino.git'
-  gem 'therubyracer'
-end
+gem 'sass'
+gem 'sass-rails'
+gem 'coffee-script',  :git => 'git://github.com/josh/ruby-coffee-script.git'
+gem 'coffee-rails',   :git => 'git://github.com/rails/coffee-rails.git'
+gem 'uglifier',       :git => 'git://github.com/lautis/uglifier.git'
+gem 'execjs',         :git => 'git://github.com/sstephenson/execjs.git'
+#gem 'therubyrhino',   :git => 'git://github.com/cowboyd/therubyrhino.git'
+#gem 'therubyracer',   :platforms => :ruby, :git => "git://github.com/cowboyd/therubyracer.git"
+gem 'therubyracer',   '0.11.4'
+#gem "libv8", git: "git://github.com/cowboyd/libv8.git", submodules: true, :platforms => :ruby
+gem "libv8"
 
-gem 'jquery-rails', :git => 'git://github.com/rails/jquery-rails.git' 
+#gem 'jquery-rails', :git => 'git://github.com/rails/jquery-rails.git' 
+gem 'jquery-rails'
 
 # To use ActiveModel has_secure_password
 #gem 'bcrypt-ruby', '~> 3.0.0'
-gem 'bcrypt-ruby'
+gem 'bcrypt'
 
 # Use unicorn as the web server
 # gem 'unicorn'
 
 # Deploy with Capistrano
-gem 'net-ssh',         :git => 'git://github.com/net-ssh/net-ssh.git'
+gem 'net-ssh'
 gem 'net-ssh-gateway'
 gem 'net-ssh-multi'
 gem 'net-sftp'
@@ -63,8 +64,8 @@ gem 'diff-lcs'
 
 gem 'RedCloth'
 
-gem 'devise'
-gem 'devise-encryptable'
+gem 'devise',             :git => 'git://github.com/plataformatec/devise.git'
+gem 'devise-encryptable', :git => 'https://github.com/plataformatec/devise-encryptable.git'
 
 gem 'bundler'
 
@@ -86,14 +87,9 @@ group :test, :development do
   gem 'sqlite3'
 end
 
-gem 'execjs',         :git => 'git://github.com/sstephenson/execjs.git'
-gem 'libv8'
-gem 'therubyrhino',   :git => 'git://github.com/cowboyd/therubyrhino.git'
-gem 'therubyracer'
-
 gem 'cancan',      :git => 'git://github.com/ryanb/cancan.git'
 
-gem 'bigdecimal'
+gem 'bigdecimal', ">=1.2.7"
 
 gem 'nokogiri'
 gem 'rubyzip', '0.9.9'
@@ -106,3 +102,5 @@ gem 'selenium-webdriver', '2.26.0'
 gem 'paperclip',   :git => 'git://github.com/thoughtbot/paperclip.git'
 
 gem 'rakismet',    :git => 'https://github.com/joshfrench/rakismet.git'
+
+gem 'protected_attributes'

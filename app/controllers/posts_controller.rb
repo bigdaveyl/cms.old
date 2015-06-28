@@ -9,8 +9,7 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
-    # @posts = Post.all
-    @posts = Post.find(:all, :order => "created_at desc")
+    @posts = Post.all.order(created_at: :desc)
     @title = "Blog Posts"
 
     @posts.each { |post| post.body = RedCloth.new(sanitize(post.body),[:filter_html, :filter_styles, :filter_classes, :filter_ids]).to_html } 
@@ -107,5 +106,4 @@ class PostsController < ApplicationController
   def parse_textile
     render :text => RedCloth.new(sanitize(params[:data]),[:filter_html, :filter_styles, :filter_classes, :filter_ids]).to_html
   end
-
 end

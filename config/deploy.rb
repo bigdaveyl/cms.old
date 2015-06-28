@@ -1,15 +1,15 @@
 require 'bundler/capistrano'
 
 set :default_environment, {
-  'PATH'         => "/opt/ruby/gems/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games",
-  'RUBY_VERSION' => 'ruby 2.0.0',
+  'PATH'         => "/opt/ruby/gems/bin:/usr/local/bin:/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/home/webpages/.local/bin:/home/webpages/bin",
+  'RUBY_VERSION' => 'ruby 2.2.0',
   'GEM_HOME'     => '/opt/ruby/gems',
-  'GEM_PATH'     => '/usr/local/lib/ruby/gems/2.0.0:/opt/ruby/gems',
+  'GEM_PATH'     => '/usr/local/lib/ruby/gems/2.2.0:/opt/ruby/gems:/usr/share/gems',
   'BUNDLE_PATH'  => '/opt/ruby/gems',
   'LANG'         => 'en_US.UTF-8'
 }
 
-set :bundle_cmd,          '/usr/local/bin/bundle'
+set :bundle_cmd,          '/usr/bin/bundle'
 set :bundle_gemfile,      'Gemfile'
 set :bundle_dir,          ''
 set :bundle_flags,        ''
@@ -31,7 +31,7 @@ set :checkout, 'export'
 
 set :user, 'webpages' # Your username goes here
 set :use_sudo, false
-set :domain, 'c7vv.x.rootbsd.net' # Your domain goes here
+set :domain, '107.170.186.52' # Your domain goes here
 set :applicationdir, "/webapps/#{application}"
 set :deploy_to, applicationdir
 
