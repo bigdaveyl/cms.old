@@ -1,12 +1,4 @@
 GIT
-  remote: git://github.com/josh/ruby-coffee-script.git
-  revision: 8d55d65a22f5753b3d0013144155e34c63cc44f9
-  specs:
-    coffee-script (2.3.0)
-      coffee-script-source
-      execjs
-
-GIT
   remote: git://github.com/lautis/uglifier.git
   revision: 9df6ea5a2776329ce0d2dde4f54f8528503e86b7
   specs:
@@ -35,7 +27,7 @@ GIT
 
 GIT
   remote: git://github.com/rails/rails.git
-  revision: e1d71a6a3e73214ff4e627ba48048126316d5e00
+  revision: 943beb1ea23866d46922a5c850f79a0fb9531f9b
   branch: 4-2-stable
   specs:
     actionmailer (4.2.3)
@@ -97,12 +89,6 @@ GIT
     cancan (1.6.10)
 
 GIT
-  remote: git://github.com/sstephenson/execjs.git
-  revision: 6cb38c1fab0dc6e48cab2c2f5a3ffa30916e7371
-  specs:
-    execjs (2.4.0)
-
-GIT
   remote: git://github.com/thoughtbot/paperclip.git
   revision: 36095bc0701a65054726af55b2689df9f7e75b9c
   specs:
@@ -127,90 +113,65 @@ GIT
       devise (>= 2.1.0)
 
 GEM
-  remote: http://rubygems.org/
+  remote: https://rubygems.org/
   specs:
     RedCloth (4.2.9)
     addressable (2.3.8)
     arel (6.0.0)
     bcrypt (3.1.10)
     bigdecimal (1.2.7)
+    binding_of_caller (0.7.2)
+      debug_inspector (>= 0.0.1)
     builder (3.2.2)
+    byebug (5.0.0)
+      columnize (= 0.9.0)
     capistrano (2.15.5)
       highline
       net-scp (>= 1.0.0)
       net-sftp (>= 2.0.0)
       net-ssh (>= 2.0.14)
       net-ssh-gateway (>= 1.1.0)
-    capybara (2.4.4)
-      mime-types (>= 1.16)
-      nokogiri (>= 1.3.3)
-      rack (>= 1.0.0)
-      rack-test (>= 0.5.4)
-      xpath (~> 2.0)
     childprocess (0.5.6)
       ffi (~> 1.0, >= 1.0.11)
     climate_control (0.0.3)
       activesupport (>= 3.0)
     cocaine (0.5.7)
       climate_control (>= 0.0.3, < 1.0)
-    coderay (1.1.0)
+    coffee-script (2.4.1)
+      coffee-script-source
+      execjs
     coffee-script-source (1.9.1.1)
+    columnize (0.9.0)
+    debug_inspector (0.0.2)
     diff-lcs (1.2.5)
     erubis (2.7.0)
-    factory_girl (4.5.0)
-      activesupport (>= 3.0.0)
-    factory_girl_rails (4.5.0)
-      factory_girl (~> 4.5.0)
-      railties (>= 3.0.0)
-    faker (1.4.3)
-      i18n (~> 0.5)
+    execjs (2.5.2)
     ffi (1.9.9)
-    formatador (0.2.5)
     globalid (0.3.5)
       activesupport (>= 4.1.0)
-    guard (2.12.7)
-      formatador (>= 0.2.4)
-      listen (>= 2.7, <= 4.0)
-      lumberjack (~> 1.0)
-      nenv (~> 0.1)
-      notiffany (~> 0.0)
-      pry (>= 0.9.12)
-      shellany (~> 0.0)
-      thor (>= 0.18.1)
-    guard-compat (1.2.1)
-    guard-rspec (4.6.0)
-      guard (~> 2.1)
-      guard-compat (~> 1.1)
-      rspec (>= 2.99.0, < 4.0)
     highline (1.7.2)
-    hike (1.2.3)
     i18n (0.7.0)
+    jbuilder (2.3.0)
+      activesupport (>= 3.0.0, < 5)
+      multi_json (~> 1.2)
     jquery-rails (4.0.4)
       rails-dom-testing (~> 1.0)
       railties (>= 4.2.0)
       thor (>= 0.14, < 2.0)
     json (1.8.3)
-    launchy (2.4.3)
-      addressable (~> 2.3)
     libv8 (3.11.8.17)
     libwebsocket (0.1.8)
       addressable
       websocket
-    listen (3.0.0)
-      rb-fsevent (>= 0.9.3)
-      rb-inotify (>= 0.9)
     loofah (2.0.2)
       nokogiri (>= 1.5.9)
-    lumberjack (1.0.9)
     mail (2.6.3)
       mime-types (>= 1.16, < 3)
-    method_source (0.8.2)
     mime-types (2.6.1)
     mimemagic (0.3.0)
     minitest (5.7.0)
     multi_json (1.11.1)
     mysql2 (0.3.18)
-    nenv (0.2.0)
     net-scp (1.2.1)
       net-ssh (>= 2.6.5)
     net-sftp (2.1.2)
@@ -218,23 +179,11 @@ GEM
     net-ssh (2.9.2)
     net-ssh-gateway (1.2.0)
       net-ssh (>= 2.6.5)
-    net-ssh-multi (1.2.1)
     nokogiri (1.6.6.2)
-    notiffany (0.0.6)
-      nenv (~> 0.1)
-      shellany (~> 0.0)
     orm_adapter (0.5.0)
     protected_attributes (1.1.0)
       activemodel (>= 4.0.1, < 5.0)
-    pry (0.10.1)
-      coderay (~> 1.1.0)
-      method_source (~> 0.8.1)
-      slop (~> 3.4)
     rack (1.6.4)
-    rack-cache (1.2)
-      rack (>= 0.4)
-    rack-ssl (1.4.1)
-      rack
     rack-test (0.6.3)
       rack (>= 1.0)
     rails-deprecated_sanitizer (1.0.3)
@@ -246,18 +195,11 @@ GEM
     rails-html-sanitizer (1.0.2)
       loofah (~> 2.0)
     rake (10.4.2)
-    rb-fsevent (0.9.5)
-    rb-inotify (0.9.5)
-      ffi (>= 0.5.0)
     rdoc (4.2.0)
       json (~> 1.4)
     ref (1.0.5)
     responders (2.1.0)
       railties (>= 4.2.0, < 5)
-    rspec (3.3.0)
-      rspec-core (~> 3.3.0)
-      rspec-expectations (~> 3.3.0)
-      rspec-mocks (~> 3.3.0)
     rspec-core (3.3.1)
       rspec-support (~> 3.3.0)
     rspec-expectations (3.3.0)
@@ -283,18 +225,17 @@ GEM
       sprockets (>= 2.8, < 4.0)
       sprockets-rails (>= 2.0, < 4.0)
       tilt (~> 1.1)
+    sdoc (0.4.1)
+      json (~> 1.7, >= 1.7.7)
+      rdoc (~> 4.0)
     selenium-webdriver (2.26.0)
       childprocess (>= 0.2.5)
       libwebsocket (~> 0.1.3)
       multi_json (~> 1.0)
       rubyzip
-    shellany (0.0.1)
-    slop (3.6.0)
-    sprockets (2.12.4)
-      hike (~> 1.2)
-      multi_json (~> 1.0)
+    spring (1.3.6)
+    sprockets (3.2.0)
       rack (~> 1.0)
-      tilt (~> 1.1, != 1.3.0)
     sprockets-rails (2.3.2)
       actionpack (>= 3.0)
       activesupport (>= 3.0)
@@ -306,13 +247,18 @@ GEM
     thor (0.19.1)
     thread_safe (0.3.5)
     tilt (1.4.1)
+    turbolinks (2.5.3)
+      coffee-rails
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
     warden (1.2.3)
       rack (>= 1.0)
+    web-console (2.1.3)
+      activemodel (>= 4.0)
+      binding_of_caller (>= 0.7.2)
+      railties (>= 4.0)
+      sprockets-rails (>= 2.0, < 4.0)
     websocket (1.2.2)
-    xpath (2.0.0)
-      nokogiri (~> 1.3)
 
 PLATFORMS
   ruby
@@ -320,58 +266,38 @@ PLATFORMS
 DEPENDENCIES
   RedCloth
   addressable
-  bcrypt
+  bcrypt (~> 3.1.7)
   bigdecimal (>= 1.2.7)
   bundler
+  byebug
   cancan!
   capistrano (= 2.15.5)
-  capybara
   coffee-rails!
-  coffee-script!
   devise!
   devise-encryptable!
   diff-lcs
-  execjs!
-  factory_girl
-  factory_girl_rails
-  faker
   ffi
-  guard-rspec
   highline
+  jbuilder
   jquery-rails
-  json (>= 1.8.2)
-  launchy
-  libv8
   mysql2
-  net-scp
-  net-sftp
-  net-ssh
-  net-ssh-gateway
-  net-ssh-multi
   nokogiri
   paperclip!
   protected_attributes
-  rack
-  rack-cache
-  rack-ssl
   rails!
-  rake
   rakismet!
   rdoc
-  rspec
-  rspec-core
-  rspec-expectations
-  rspec-mocks
   rspec-rails
-  rspec-support
   rubyzip (= 0.9.9)
-  sass
   sass-rails
+  sdoc
   selenium-webdriver (= 2.26.0)
-  sprockets (~> 2.8)
+  spring
   sqlite3
   therubyracer (= 0.11.4)
+  turbolinks
   uglifier!
+  web-console (~> 2.0)
 
 BUNDLED WITH
    1.10.5

@@ -1,89 +1,48 @@
-if RUBY_VERSION =~ /1.9/
-  Encoding.default_external = Encoding::UTF_8
-  Encoding.default_internal = Encoding::UTF_8
-end
+source 'https://rubygems.org'
 
-source 'http://rubygems.org'
 
-gem 'rack'
-gem 'rack-cache'
-gem 'rack-ssl'
-#gem 'sprockets'
-gem 'sprockets', '~> 2.8'
-
-gem 'rake'
-
-#gem 'railties', ">=3.2.11", "<3.3.0" 
-
-# Bundle edge Rails instead:
+# Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails',      :git => 'git://github.com/rails/rails.git', :branch => '4-2-stable'
-#gem 'railties',   :git => 'git://github.com/rails/rails.git', :branch => '4-2-stable'
-
+# Use mysql2 as the database for Active Record
 gem 'mysql2'
-
-gem 'json', ">=1.8.2"
-
-# Gems used only for assets and not required
-# in production environments by default.
-gem 'sass'
+# Use SCSS for stylesheets
 gem 'sass-rails'
-gem 'coffee-script',  :git => 'git://github.com/josh/ruby-coffee-script.git'
-gem 'coffee-rails',   :git => 'git://github.com/rails/coffee-rails.git'
+# Use Uglifier as compressor for JavaScript assets
 gem 'uglifier',       :git => 'git://github.com/lautis/uglifier.git'
-gem 'execjs',         :git => 'git://github.com/sstephenson/execjs.git'
-#gem 'therubyrhino',   :git => 'git://github.com/cowboyd/therubyrhino.git'
-#gem 'therubyracer',   :platforms => :ruby, :git => "git://github.com/cowboyd/therubyracer.git"
-gem 'therubyracer',   '0.11.4'
-#gem "libv8", git: "git://github.com/cowboyd/libv8.git", submodules: true, :platforms => :ruby
-gem "libv8"
+# Use CoffeeScript for .coffee assets and views
+gem 'coffee-rails',   :git => 'git://github.com/rails/coffee-rails.git'
+# See https://github.com/rails/execjs#readme for more supported runtimes
+gem 'therubyracer', '0.11.4', platforms: :ruby
 
-#gem 'jquery-rails', :git => 'git://github.com/rails/jquery-rails.git' 
+# Use jquery as the JavaScript library
 gem 'jquery-rails'
+# Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
+gem 'turbolinks'
+# Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
+gem 'jbuilder'
+# bundle exec rake doc:rails generates the API under doc/api.
+gem 'sdoc'
 
-# To use ActiveModel has_secure_password
-#gem 'bcrypt-ruby', '~> 3.0.0'
-gem 'bcrypt'
+# Use ActiveModel has_secure_password
+gem 'bcrypt', '~> 3.1.7'
 
-# Use unicorn as the web server
+# Use Unicorn as the app server
 # gem 'unicorn'
 
-# Deploy with Capistrano
-gem 'net-ssh'
-gem 'net-ssh-gateway'
-gem 'net-ssh-multi'
-gem 'net-sftp'
-#gem 'net-scp',         :git => 'git://github.com/net-ssh/net-scp.git'
-gem 'net-scp'
-gem 'capistrano', '2.15.5'
+group :development, :test do
+  # Use Capistrano for deployment
+  gem 'capistrano', '2.15.5'
 
-# To use debugger
-# gem 'ruby-debug19'
-# gem 'linecache19'
+  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
+  gem 'byebug'
 
-gem 'diff-lcs'
+  # Access an IRB console on exception pages or by using <%= console %> in views
+  gem 'web-console', '~> 2.0'
 
-gem 'RedCloth'
+  # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
+  gem 'spring'
 
-gem 'devise',             :git => 'git://github.com/plataformatec/devise.git'
-gem 'devise-encryptable', :git => 'https://github.com/plataformatec/devise-encryptable.git'
-
-gem 'bundler'
-
-gem 'highline'
-
-group :test, :development do
-  gem 'rspec'
-  gem 'rspec-core'
-  gem 'rspec-mocks'
-  gem 'rspec-expectations'
   gem 'rspec-rails'
-  gem 'rspec-support'
-  gem 'capybara'
-  gem 'factory_girl'
-  gem 'factory_girl_rails'
-  gem 'guard-rspec'
-  gem 'launchy'
-  gem 'faker'
   gem 'sqlite3'
 end
 
@@ -104,3 +63,15 @@ gem 'paperclip',   :git => 'git://github.com/thoughtbot/paperclip.git'
 gem 'rakismet',    :git => 'https://github.com/joshfrench/rakismet.git'
 
 gem 'protected_attributes'
+
+gem 'diff-lcs'
+
+gem 'RedCloth'
+
+gem 'devise',             :git => 'git://github.com/plataformatec/devise.git'
+gem 'devise-encryptable', :git => 'https://github.com/plataformatec/devise-encryptable.git'
+
+gem 'bundler'
+
+gem 'highline'
+
