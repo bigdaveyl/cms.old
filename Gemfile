@@ -31,7 +31,7 @@ gem 'bcrypt', '~> 3.1.7'
 
 group :development, :test do
   # Use Capistrano for deployment
-  gem 'capistrano', '2.15.5'
+  gem 'capistrano', '~> 2.15'
 
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
@@ -42,7 +42,12 @@ group :development, :test do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
 
+  gem 'faker'
   gem 'rspec-rails'
+  gem 'factory_girl_rails'
+  gem 'capybara'
+  gem 'database_cleaner'
+
   gem 'sqlite3'
 end
 

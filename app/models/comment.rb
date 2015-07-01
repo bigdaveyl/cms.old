@@ -6,6 +6,6 @@ class Comment < ActiveRecord::Base
 
   belongs_to :post
 
-  #attr_accessor :name, :body, :name_url, :name_email, :user_ip, :user_agent, :referrer, :permalink
+  attr_accessor :name, :body, :name_url, :name_email, :user_ip, :user_agent, :referrer, :permalink
   rakismet_attrs :author => :name, :content => :body, :author_email => :name_email, :author_url => :name_url, :comment_type => "comment"
 end
