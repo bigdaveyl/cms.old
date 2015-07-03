@@ -7,7 +7,7 @@ GIT
 
 GIT
   remote: git://github.com/plataformatec/devise.git
-  revision: 181920886e4e60783f330b94072b0423345f714f
+  revision: fe5b7db6ab1053b4feda9f0286635c91518cd747
   specs:
     devise (3.5.1)
       bcrypt (~> 3.0)
@@ -27,7 +27,7 @@ GIT
 
 GIT
   remote: git://github.com/rails/rails.git
-  revision: 449241cc30545783419bd8f3cbc7b81137316001
+  revision: 27473458f3a5c9c8446829abbcc795724192c22e
   branch: 4-2-stable
   specs:
     actionmailer (4.2.3)
@@ -90,7 +90,7 @@ GIT
 
 GIT
   remote: git://github.com/thoughtbot/paperclip.git
-  revision: b417ed8871346aacabd959edd0585d7ca9f39e9c
+  revision: 947fbf6e7998154235f81754a44b6b187368a657
   specs:
     paperclip (4.3.0)
       activemodel (>= 3.2.0)
@@ -160,7 +160,7 @@ GEM
       railties (>= 3.0.0)
     faker (1.4.3)
       i18n (~> 0.5)
-    ffi (1.9.9)
+    ffi (1.9.10)
     globalid (0.3.5)
       activesupport (>= 4.1.0)
     highline (1.7.2)
@@ -261,8 +261,6 @@ GEM
     thor (0.19.1)
     thread_safe (0.3.5)
     tilt (1.4.1)
-    turbolinks (2.5.3)
-      coffee-rails
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
     warden (1.2.3)
@@ -315,7 +313,6 @@ DEPENDENCIES
   spring
   sqlite3
   therubyracer (= 0.11.4)
-  turbolinks
   uglifier!
   web-console (~> 2.0)
 
