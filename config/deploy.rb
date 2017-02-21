@@ -1,70 +1,41 @@
-require 'bundler/capistrano'
+set :application, "thelinuxgeek.org"
+set :repo_url, "bigdaveyl@github.com:bigdaveyl/cms.git"
 
-set :default_environment, {
-  'PATH'         => "/opt/ruby/gems/bin:/usr/local/bin:/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/home/webpages/.local/bin:/home/webpages/bin",
-  'RUBY_VERSION' => 'ruby 2.2.0',
-  'GEM_HOME'     => '/opt/ruby/gems',
-  'GEM_PATH'     => '/usr/local/lib/ruby/gems/2.2.0:/opt/ruby/gems:/usr/share/gems',
-  'BUNDLE_PATH'  => '/opt/ruby/gems',
-  'LANG'         => 'en_US.UTF-8'
-}
+# Default branch is :master
+# ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
 
-set :bundle_cmd,          '/usr/bin/bundle'
-set :bundle_gemfile,      'Gemfile'
-set :bundle_dir,          ''
-set :bundle_flags,        ''
-set :bundle_without,      [:development, :test]
+# Default deploy_to directory is /var/www/my_app_name
+set :deploy_to, "/webapps/thelinuxgeek.org"
 
-default_run_options[:pty] = true
-set :rake, "/opt/ruby/gems/bin/rake"
+# Default value for :format is :airbrussh.
+# set :format, :airbrussh
 
-set :application, 'thelinuxgeek.org'
-set :repository,  '.'
+# You can configure the Airbrussh format using :format_options.
+# These are the defaults.
+# set :format_options, command_output: true, log_file: "log/capistrano.log", color: :auto, truncate: :auto
 
-#set :scm, :subversion
-set :scm, :none
-# Or: `accurev`, `bzr`, `cvs`, `darcs`, `git`, `mercurial`, `perforce`, `subversion` or `none`
+# Default value for :pty is false
+set :pty, true
 
-set :deploy_via, :copy
+# Default value for :linked_files is []
+set :linked_files, fetch(:linked_files, []).push('config/database.yml', 'config/secrets.yml')
 
-set :checkout, 'export'
+# Default value for linked_dirs is []
+set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', 'public/system', 'public/uploads')
 
-set :user, 'webpages' # Your username goes here
-set :use_sudo, false
-set :domain, '107.170.186.52' # Your domain goes here
-set :applicationdir, "/webapps/#{application}"
-set :deploy_to, applicationdir
+# Default value for default_env is {}
+# set :default_env, { path: "/opt/ruby/bin:$PATH" }
 
-role :web, domain                 
-role :app, domain                          
-role :db,  domain, :primary => true
+# Default value for keep_releases is 5
+set :keep_releases, 5
 
-# if you're still using the script/reaper helper you will need
-# these http://github.com/rails/irs_process_scripts
-
-# If you are using Passenger mod_rails uncomment this:
 namespace :deploy do
-  task :start do ; end
-  task :stop do ; end
-
-  desc "reload the database with seed data"
-  task :seed do
-    run "cd #{current_path}; rake db:seed RAILS_ENV=#{rails_env}"
-  end
-
-  task :restart, :roles => :app, :except => { :no_release => true } do
-    run "cp -f ~/thelinuxgeek.org-files/BingSiteAuth.xml #{release_path}/public/BingSiteAuth.xml"  
-    run "cp -f ~/thelinuxgeek.org-files/googlefd60b389ebf8ae61.html #{release_path}/public/googlefd60b389ebf8ae61.html"  
-    run "cp -f ~/thelinuxgeek.org-files/application.rb #{release_path}/config/application.rb"  
-    run "#{try_sudo} touch #{File.join(current_path,'tmp','restart.txt')}"
+  after :restart, :clear_cache do
+    on roles(:web), in: :groups, limit: 3, wait: 10 do
+      # Here we can do anything such as:
+      # within release_path do
+      #   execute :rake, 'cache:clear'
+      # end
+    end
   end
 end
-
-namespace :db do  
-  task :db_config, :except => { :no_release => true }, :role => :app do  
-    run "cp -f ~/thelinuxgeek.org-files/database.yml #{release_path}/config/database.yml"  
-    run "cp -f ~/thelinuxgeek.org-files/seeds.rb #{release_path}/db/seeds.rb"  
-  end  
-end  
-  
-after "deploy:finalize_update", "db:db_config"

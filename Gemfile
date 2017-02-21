@@ -29,9 +29,16 @@ gem 'bcrypt', '~> 3.1.7'
 # Use Unicorn as the app server
 # gem 'unicorn'
 
+gem 'mini_portile'
+
 group :development, :test do
   # Use Capistrano for deployment
-  gem 'capistrano', '~> 2.15'
+  #gem 'capistrano', '2.15.5'
+  gem 'capistrano'
+  gem 'capistrano-rails'
+  gem 'capistrano-bundler'
+  gem 'capistrano-passenger'
+  gem 'capistrano-chruby', github: 'capistrano/chruby'
 
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
