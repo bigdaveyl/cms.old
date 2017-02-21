@@ -83,7 +83,8 @@ gem 'RedCloth'
 gem 'devise',             :git => 'git://github.com/plataformatec/devise.git'
 gem 'devise-encryptable', :git => 'https://github.com/plataformatec/devise-encryptable.git'
 
-gem 'bundler'
+gem 'bundler', '1.13.7'
 
 gem 'highline'
 
+gem 'mini_portile2'
