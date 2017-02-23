@@ -58,7 +58,7 @@ group :development, :test do
   gem 'sqlite3'
 end
 
-gem 'cancan',      :git => 'git://github.com/ryanb/cancan.git'
+gem 'cancancan'
 
 gem 'bigdecimal', ">=1.2.7"
 
