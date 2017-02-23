@@ -34,7 +34,7 @@ module Cms
       g.fixture_replacement :factory_girl, :dir => "spec/factories"
     end
 
-    config.rakismet.key = ''
+    config.rakismet.key = '996903959b05'
     config.rakismet.url = 'http://www.thelinuxgeek.org/'
   end
 end

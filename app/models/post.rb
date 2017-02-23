@@ -1,6 +1,6 @@
 class Post < ActiveRecord::Base
 
-  attr_accessible :title, :body, :postimages_attributes
+  attr_accessible :title, :body, :user, :postimages_attributes
   validates :title, :presence => true, :length => { :minimum => 2 }
   validates :body, :presence => true, :length => { :minimum => 4}
   has_many :comments, :dependent => :destroy

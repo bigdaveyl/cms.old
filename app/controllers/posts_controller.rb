@@ -60,8 +60,8 @@ class PostsController < ApplicationController
   # POST /posts
   # POST /posts.json
   def create
-    @post = current_user.posts.new(params[:post])
-    #@post = current_user.posts.new(post_params)
+    #@post = current_user.posts.new(params[:post])
+    @post = current_user.posts.new(post_params)
     @title = "Creating Posts"
 
     respond_to do |format|
@@ -82,7 +82,7 @@ class PostsController < ApplicationController
     @title = "Updating Post"
 
     respond_to do |format|
-      if @post.update_attributes(params[:post])
+      if @post.update(post_params)
         format.html { redirect_to @post, :notice => 'Post was successfully updated.' }
         format.json { head :no_content }
       else
@@ -110,6 +110,6 @@ class PostsController < ApplicationController
 
    private
     def post_params
-   	 params.require(:article).permit(:title, :body, comments_attributes: [:post_id, :name, :body ])
+   	 params.require(:post).permit(:title, :body, comments_attributes: [:post_id, :name, :body ])
     end
 end

@@ -1,11 +1,9 @@
-<p>
   <strong> <%= comment.name %> </strong> <br />
   <%= comment.created_at.try(:strftime, "on %A, %B %d %Y at %H:%M:%S") %><br />
-  <%= simple_format(h(comment.body), :sanitize => true) %><br />
+  <%= simple_format(comment.body, :sanitize => true) %><br />
 
   <% if can? :destroy, comment %>
     <%= link_to 'Destroy Comment', [comment.post, comment],
                  :confirm => 'Are you sure?',
                  :method => :delete %>
   <% end %>
-</p>
