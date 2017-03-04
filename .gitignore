@@ -4,3 +4,4 @@ log/*.log
 tmp/
 .sass-cache/
 db/seeds.rb
+public/system/galleryphotos/
