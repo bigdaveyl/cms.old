@@ -1,5 +1,4 @@
-class Gallery < ActiveRecord::Base
-  attr_accessible :description, :title, :galleryphotos_attributes
+class Gallery < ApplicationRecord
   has_many :galleryphotos
   accepts_nested_attributes_for :galleryphotos, :allow_destroy => true    
 

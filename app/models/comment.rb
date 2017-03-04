@@ -1,4 +1,4 @@
-class Comment < ActiveRecord::Base
+class Comment < ApplicationRecord
   include Rakismet::Model
 
   validates :name, :presence => true, :length => { :minimum => 2 }
