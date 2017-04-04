@@ -74,6 +74,7 @@ gem 'ffi'
 gem 'rdoc'
 
 gem 'paperclip',   :github => 'thoughtbot/paperclip'
+gem 'aws-sdk'
 
 gem 'rakismet',    :github => 'joshfrench/rakismet'
 

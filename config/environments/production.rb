@@ -90,4 +90,11 @@ Rails.application.configure do
     :address              => "mail.thelinuxgeek.org",
     :port                 => 25,
   }
+
+  # AWS S3 storage for gallery
+  config.paperclip_defaults = {
+    :storage => :s3,
+    :bucket => 'thelinuxgeek.org-gallery'
+  }
+
 end
