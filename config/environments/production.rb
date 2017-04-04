@@ -94,7 +94,8 @@ Rails.application.configure do
   # AWS S3 storage for gallery
   config.paperclip_defaults = {
     :storage => :s3,
-    :s3_region => 's3-us-east-1.amazonaws.com',
+    :s3_credentials => "#{Rails.root}/config/aws.yml",
+    :s3_region => 'us-east-1',
     :bucket => 'thelinuxgeek.org-gallery'
   }
 
