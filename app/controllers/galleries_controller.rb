@@ -26,7 +26,7 @@ class GalleriesController < ApplicationController
   # GET /galleries/new.json
   def new
     @gallery = Gallery.new
-    50.times { @gallery.galleryphotos.build }    
+    @gallery.galleryphotos.build
 
     respond_to do |format|
       format.html # new.html.erb
@@ -37,7 +37,7 @@ class GalleriesController < ApplicationController
   # GET /galleries/1/edit
   def edit
     @gallery = Gallery.find(params[:id])
-    50.times { @gallery.galleryphotos.build }    
+    @gallery.galleryphotos.build 
   end
 
   # POST /galleries
@@ -47,6 +47,11 @@ class GalleriesController < ApplicationController
 
     respond_to do |format|
       if @gallery.save
+        if params[:photos]
+          params[:photos].each { |image|
+            @gallery.galleryphotos.create(photo: image)
+        }
+	end
         format.html { redirect_to @gallery, notice: 'Gallery was successfully created.' }
         format.json { render json: @gallery, status: :created, location: @gallery }
       else
@@ -63,6 +68,11 @@ class GalleriesController < ApplicationController
 
     respond_to do |format|
       if @gallery.update(gallery_params)
+        if params[:photos]
+          params[:photos].each { |image|
+            @gallery.galleryphotos.create(photo: image)
+        }
+	end
         format.html { redirect_to @gallery, notice: 'Gallery was successfully updated.' }
         format.json { head :no_content }
       else
