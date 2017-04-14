@@ -23,6 +23,16 @@
   <h4>New Files</h4>
   <p><%= file_field_tag("photos[]",type: :file,multiple: true) %></p>
 
+  <h4>Old Files</h4>
+  <% unless @gallery.new_record? %>
+     <% @gallery.galleryphotos.each do |p| %>
+       <% unless p.id.nil? %>
+       	 <% puts p.inspect %>
+         <%= image_tag(p.photo.url(:thumb)) %>
+         <%= check_box_tag 'destruction[]', p.id %>
+      <% end %>
+    <% end %>
+  <% end %>
 
   <div class="actions">
     <%= f.submit %>

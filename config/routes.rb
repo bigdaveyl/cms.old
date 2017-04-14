@@ -26,7 +26,6 @@ Rails.application.routes.draw do
 
   devise_for :users, :skip => :registrations
 
-
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
