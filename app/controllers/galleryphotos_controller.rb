@@ -22,7 +22,7 @@ class GalleryphotosController < ApplicationController
 
   private
    def galleryphoto_params
-     params.require(:galleryphoto).permit(:gallery_id, :photo_file_name, :photo_content_type, :photo_updated_at, :photo_file_size, :photo_description)
+     params.require(:galleryphoto).permit(:id, :gallery_id, :photo_file_name, :photo_content_type, :photo_file_size, :photo_description, :_destroy)
    end
 
 end
