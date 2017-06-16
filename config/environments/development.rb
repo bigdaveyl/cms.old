@@ -37,6 +37,13 @@ Rails.application.configure do
   # Raise an error on page load if there are pending migrations.
   config.active_record.migration_error = :page_load
 
+  # Debug mode disables concatenation and preprocessing of assets.
+  # This option may cause significant delays in view rendering with a large
+  # number of complex assets.
+  config.assets.debug = false
+
+  # Suppress logger output for asset requests.
+  config.assets.quiet = true
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
@@ -48,6 +55,7 @@ Rails.application.configure do
   Paperclip.options[:command_path] = "/usr/bin/"
   Paperclip.options[:log] = true
 
-  config.logger = Logger.new(STDOUT)
-  config.log_level = :debug
+  logger           = ActiveSupport::Logger.new(STDOUT)
+  logger.formatter = config.log_formatter
+  config.logger    = ActiveSupport::TaggedLogging.new(logger)
 end
