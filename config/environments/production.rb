@@ -95,8 +95,13 @@ Rails.application.configure do
   config.action_mailer.default_url_options = { :host => 'thelinuxgeek.org' }  
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-    :address              => "mail.thelinuxgeek.org",
-    :port                 => 25,
+    :address              => "email-smtp.us-east-1.amazonaws.com",
+    :port                 => 465,
+    :tls                  => true,
+    :domain               => "thelinuxgeek.org",
+    :authentication       => :login,
+    :user_name            => "AKIAJRRV6BNQ4VVHKM5Q",
+    :password             => "Aj9WAr8ygQVhTytJuIGFXy/8ybhvrINaGKJppurbkA/d"
   }
 
   # AWS S3 storage for gallery

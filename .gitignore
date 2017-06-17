@@ -7,3 +7,4 @@ db/seeds.rb
 public/system/galleryphotos/
 config/aws.yml
 config/secrets.yml
+config/production.rb
