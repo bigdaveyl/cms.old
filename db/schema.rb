@@ -10,80 +10,81 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20121115030517) do
+ActiveRecord::Schema.define(version: 20170621212659) do
 
   create_table "comments", force: :cascade do |t|
-    t.string   "name",       limit: 255
-    t.text     "body"
-    t.integer  "post_id"
+    t.string "name", limit: 255
+    t.text "body"
+    t.integer "post_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "name_url",   limit: 255
-    t.string   "name_email", limit: 255
-    t.string   "user_ip",    limit: 255
-    t.string   "user_agent", limit: 255
-    t.string   "referrer",   limit: 255
-    t.string   "permalink",  limit: 255
+    t.string "name_url", limit: 255
+    t.string "name_email", limit: 255
+    t.string "user_ip", limit: 255
+    t.string "user_agent", limit: 255
+    t.string "referrer", limit: 255
+    t.string "permalink", limit: 255
     t.index ["post_id"], name: "index_comments_on_post_id"
   end
 
   create_table "galleries", force: :cascade do |t|
-    t.string   "title",       limit: 255
-    t.text     "description"
+    t.string "title", limit: 255
+    t.text "description"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "galleryphotos", force: :cascade do |t|
-    t.string   "photo_file_name",    limit: 255
-    t.string   "photo_content_type", limit: 255
+    t.string "photo_file_name", limit: 255
+    t.string "photo_content_type", limit: 255
     t.datetime "photo_updated_at"
-    t.integer  "photo_file_size"
-    t.text     "photo_description"
-    t.integer  "gallery_id"
+    t.integer "photo_file_size"
+    t.text "photo_description"
+    t.integer "gallery_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "postimages", force: :cascade do |t|
-    t.string   "image_file_name",    limit: 255
-    t.string   "image_content_type", limit: 255
-    t.integer  "image_file_size"
+    t.string "image_file_name", limit: 255
+    t.string "image_content_type", limit: 255
+    t.integer "image_file_size"
     t.datetime "image_updated_at"
-    t.integer  "post_id"
+    t.integer "post_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "posts", force: :cascade do |t|
-    t.string   "title",      limit: 255
-    t.text     "body"
+    t.string "title", limit: 255
+    t.text "body"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "user_id"
+    t.integer "user_id"
     t.index ["user_id"], name: "index_posts_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
-    t.string   "email",                  limit: 255, default: "",    null: false
-    t.string   "encrypted_password",     limit: 255, default: "",    null: false
-    t.string   "reset_password_token",   limit: 255
+    t.string "email", limit: 255, default: "", null: false
+    t.string "encrypted_password", limit: 255, default: "", null: false
+    t.string "reset_password_token", limit: 255
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",                      default: 0
+    t.integer "sign_in_count", default: 0
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
-    t.string   "current_sign_in_ip",     limit: 255
-    t.string   "last_sign_in_ip",        limit: 255
+    t.string "current_sign_in_ip", limit: 255
+    t.string "last_sign_in_ip", limit: 255
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.boolean  "admin",                              default: false, null: false
-    t.boolean  "blogger",                            default: false, null: false
-    t.boolean  "photos",                             default: false, null: false
-    t.string   "username",               limit: 255
-    t.string   "unconfirmed_email",      limit: 255, default: "",    null: false
+    t.boolean "admin", default: false, null: false
+    t.boolean "blogger", default: false, null: false
+    t.boolean "photos", default: false, null: false
+    t.string "username", limit: 255
+    t.string "unconfirmed_email", limit: 255, default: "", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+    t.index ["username", "email"], name: "index_users_on_username_and_email", unique: true
     t.index ["username"], name: "index_users_on_username", unique: true
   end
 
