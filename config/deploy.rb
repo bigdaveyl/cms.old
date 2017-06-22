@@ -18,7 +18,7 @@ set :deploy_to, "/webapps/thelinuxgeek.org"
 set :pty, true
 
 # Default value for :linked_files is []
-set :linked_files, fetch(:linked_files, []).push('config/database.yml', 'config/secrets.yml', 'config/aws.yml', 'config/environment/production.rb', 'public/BingSiteAuth.xml','public/googlefd60b389ebf8ae61.html')
+set :linked_files, fetch(:linked_files, []).push('config/database.yml', 'config/secrets.yml', 'config/aws.yml', 'config/environments/production.rb', 'public/BingSiteAuth.xml','public/googlefd60b389ebf8ae61.html')
 
 # Default value for linked_dirs is []
 set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', 'public/system', 'public/uploads', 'public/usage')
