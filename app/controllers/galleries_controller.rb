@@ -4,6 +4,7 @@ class GalleriesController < ApplicationController
   # GET /galleries.json
   def index
     @galleries = Gallery.all
+    @title = "Photo Galleries"
 
     respond_to do |format|
       format.html # index.html.erb
@@ -15,6 +16,7 @@ class GalleriesController < ApplicationController
   # GET /galleries/1.json
   def show
     @gallery = Gallery.find(params[:id])
+    @title = "Photo Gallery"
 
     respond_to do |format|
       format.html # show.html.erb
@@ -27,6 +29,7 @@ class GalleriesController < ApplicationController
   def new
     @gallery = Gallery.new
     @gallery.galleryphotos.build
+    @title = "New Gallery"
 
     respond_to do |format|
       format.html # new.html.erb
@@ -38,12 +41,14 @@ class GalleriesController < ApplicationController
   def edit
     @gallery = Gallery.find(params[:id])
     @gallery.galleryphotos.build 
+    @title = "Edit Gallery"
   end
 
   # POST /galleries
   # POST /galleries.json
   def create
     @gallery = Gallery.new(gallery_params)
+    @title = "Create Gallery"
 
     respond_to do |format|
       if @gallery.save
@@ -65,6 +70,7 @@ class GalleriesController < ApplicationController
   # PUT /galleries/1.json
   def update
     @gallery = Gallery.find(params[:id])
+    @title = "Update Gallery"
 
     respond_to do |format|
       if @gallery.update(gallery_params)
@@ -87,6 +93,7 @@ class GalleriesController < ApplicationController
   def destroy
     @gallery = Gallery.find(params[:id])
     @gallery.destroy
+    @title = "Destroy Gallery"
 
     respond_to do |format|
       format.html { redirect_to galleries_url }

@@ -5,6 +5,7 @@ class GalleryphotosController < ApplicationController
     @gallery = Gallery.find(params[:gallery_id])
     logger.debug "gallery found: #{@gallery.attributes.inspect}"
     @galleryphoto = @gallery.galleryphotos.new(galleryphoto_params)
+    @title = "Create Photo"
 
     logger.debug "New galleryphoto posted: #{@galleryphoto.attributes.inspect}"
   end
@@ -12,7 +13,7 @@ class GalleryphotosController < ApplicationController
   def show
     @gallery = Gallery.find(params[:gallery_id])
     @galleyphoto = @gallery.galleryphotos.find(params[:id])
-    
+    @title = "Showing Photo"
 
     respond_to do |format|
       format.html # show.html.erb
