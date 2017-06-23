@@ -1,5 +1,5 @@
 <h1><%= link_to_unless_current(post.title, post) %></h1>
-by <%= post.user.username %> <%= post.created_at.strftime("on %A, %B %d %Y at %H:%M %Z") %><br />
+by <%= link_to post.user.username, user_path(post.user_id) %> <%= post.created_at.strftime("on %A, %B %d %Y at %H:%M %Z") %><br />
 <br />
 
 <p>
