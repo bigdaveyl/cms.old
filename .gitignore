@@ -5,6 +5,7 @@ tmp/
 .sass-cache/
 db/seeds.rb
 public/system/galleryphotos/
+public/system/users/
 config/aws.yml
 config/secrets.yml
 config/production.rb
