@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  get 'messages/new'
+
+  get 'messages/create'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   # See how all your routes lay out with "rake routes".
@@ -10,7 +14,8 @@ Rails.application.routes.draw do
 
   get "home/index"
 
-  get "home/contact"
+  get 'contact', to: 'messages#new', as: 'contact'
+  post 'contact', to: 'messages#create'
 
   get "home/presentations"
 

@@ -1,0 +1,30 @@
+<h2>Contact Me</h2>
+
+<h3>Social Media</h3>
+<%= link_to "Facebook", "http://www.facebook.com/dave.liana" %> <br />
+<%= link_to "LinkedIn", "http://www.linkedin.com/in/dliana" %> <br />
+<%= link_to "Twitter", "https://twitter.com/linuxgeekroc" %> <br />
+
+<%= link_to "Stack Overflow", "http://stackoverflow.com/users/1011911/bigdaveyl" %> <br />
+<%= link_to "Github", "https://github.com/bigdaveyl/" %> <br />
+
+<h3>Send an E-Mail</h3>
+<%= form_for @message, url: contact_path do |f| %>
+  <div class="field">
+    <%= f.label :name %> <%= f.text_field :name %> <br />
+  </div>
+
+  <div class="field">
+    <%= f.label :email %> <%= f.email_field :email %> <br />
+  </div>
+    
+  <div class="field">
+    <%= f.label :content, "Message" %><br />
+    <%= f.text_area :content, cols: 50, rows: 20 %>
+    <br />
+  </div>
+  
+  <div class="field">
+    <%= f.submit "Send" %>
+  </div>
+<% end %>

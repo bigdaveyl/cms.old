@@ -94,3 +94,5 @@ gem 'highline'
 gem 'mini_portile'
 gem 'mini_portile2'
 gem 'rb-fsevent'
+
+gem 'mail_form'
