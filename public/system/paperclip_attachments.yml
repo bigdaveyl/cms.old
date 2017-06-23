@@ -1,0 +1,16 @@
+---
+:User:
+  :avatar:
+  - :big
+  - :croppable
+  - :thumb
+:Galleryphoto:
+  :photo:
+  - :large
+  - :medium
+  - :thumb
+:Postimage:
+  :image:
+  - :large
+  - :medium
+  - :thumb

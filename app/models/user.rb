@@ -11,4 +11,7 @@ class User < ApplicationRecord
 
   has_many :posts
 
+  has_attached_file :avatar, styles: { thumb: "x100", croppable: "400x400>", big: "1000x1000>" }, default_url: "/images/:style/missing.png"
+  validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\z/
+
 end

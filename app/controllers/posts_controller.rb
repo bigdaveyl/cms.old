@@ -60,7 +60,7 @@ class PostsController < ApplicationController
   # POST /posts
   # POST /posts.json
   def create
-    @post = current_user.posts.new(post_params)
+    @post = Post.new(post_params)
     @title = "Creating Posts"
 
     respond_to do |format|
@@ -107,8 +107,8 @@ class PostsController < ApplicationController
     render :text => RedCloth.new(sanitize(params[:data]),[:filter_html, :filter_styles, :filter_classes, :filter_ids]).to_html
   end
 
-   private
+  private
     def post_params
-   	 params.require(:post).permit(:title, :body, comments_attributes: [:post_id, :name, :body ])
+      params.require(:post).permit(:title, :body, :user_id, comments_attributes: [:post_id, :name, :body ])
     end
 end

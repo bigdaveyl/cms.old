@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  get 'users/show'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
@@ -7,16 +6,6 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
-
-  resources :galleries do
-    resources :galleryphotos
-  end
-
-  resources :posts do
-    post 'parse_textile', :on => :collection
-    resources :comments
-  end
-
   root :to => "home#index"
 
   get "home/index"
@@ -27,7 +16,18 @@ Rails.application.routes.draw do
 
   get "home/presentations"
 
+
+  resources :galleries do
+    resources :galleryphotos
+  end
+
+  resources :posts do
+    post 'parse_textile', :on => :collection
+    resources :comments
+  end
+
   devise_for :users, :skip => :registrations
+  resources :users, only: [:show, :edit, :update]
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
