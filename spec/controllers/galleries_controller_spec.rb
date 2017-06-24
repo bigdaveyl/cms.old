@@ -24,8 +24,7 @@ require 'rails_helper'
 # `rails-controller-testing` gem.
 
 RSpec.describe GalleriesController, type: :controller do
-  login_user
-  
+
   # This should return the minimal set of attributes required to create a valid
   # Gallery. As you add validations to Gallery, be sure to
   # adjust the attributes here as well.

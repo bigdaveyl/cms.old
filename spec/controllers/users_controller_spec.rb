@@ -24,7 +24,6 @@ require 'rails_helper'
 # `rails-controller-testing` gem.
 
 RSpec.describe UsersController, type: :controller do
-  login_user
 
   # This should return the minimal set of attributes required to create a valid
   # User. As you add validations to User, be sure to
@@ -58,12 +57,12 @@ RSpec.describe UsersController, type: :controller do
     end
   end
 
-  #describe "GET #new" do
-  #  it "returns a success response" do
-  #    get :new, params: {}, session: valid_session
-  #    expect(response).to be_success
-  #  end
-  #end
+  describe "GET #new" do
+    it "returns a success response" do
+      get :new, params: {}, session: valid_session
+      expect(response).to be_success
+    end
+  end
 
   describe "GET #edit" do
     it "returns a success response" do

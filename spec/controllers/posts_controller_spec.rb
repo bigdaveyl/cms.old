@@ -24,19 +24,12 @@ require 'rails_helper'
 # `rails-controller-testing` gem.
 
 RSpec.describe PostsController, type: :controller do
-  login_user
 
   # This should return the minimal set of attributes required to create a valid
   # Post. As you add validations to Post, be sure to
   # adjust the attributes here as well.
-  @user = FactoryGirl.create(:user)
-  @post = FactoryGirl.build(:post)
-  @post.user_id = @user.id
-  @user.save
-  @post.save
-
   let(:valid_attributes) {
-    { title: FFaker::CheesyLingo, body: FFaker::Lorem.paragraphs, user_id: 1 }
+    skip("Add a hash of attributes valid for your model")
   }
 
   let(:invalid_attributes) {

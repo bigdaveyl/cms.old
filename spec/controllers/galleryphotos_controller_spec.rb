@@ -24,7 +24,6 @@ require 'rails_helper'
 # `rails-controller-testing` gem.
 
 RSpec.describe GalleryphotosController, type: :controller do
-  login_user
 
   # This should return the minimal set of attributes required to create a valid
   # Galleryphoto. As you add validations to Galleryphoto, be sure to
