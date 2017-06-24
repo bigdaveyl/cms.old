@@ -10,8 +10,6 @@ class CommentsController < ApplicationController
     logger.debug "post found: #{@post.attributes.inspect}"
     @comment = @post.comments.new(comment_params)
 
-    logger.debug "New comment posted: #{@comment.attributes.inspect}"
-    
     @comment.referrer = request.referer
     @comment.user_ip = request.remote_ip
     @comment.user_agent = request.env["HTTP_USER_AGENT"]

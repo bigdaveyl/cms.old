@@ -23,20 +23,14 @@ require 'rails_helper'
 # removed from Rails core in Rails 5, but can be added back in via the
 # `rails-controller-testing` gem.
 
-RSpec.describe PostsController, type: :controller do
+RSpec.describe GalleryphotosController, type: :controller do
   login_user
 
   # This should return the minimal set of attributes required to create a valid
-  # Post. As you add validations to Post, be sure to
+  # Galleryphoto. As you add validations to Galleryphoto, be sure to
   # adjust the attributes here as well.
-  @user = FactoryGirl.create(:user)
-  @post = FactoryGirl.build(:post)
-  @post.user_id = @user.id
-  @user.save
-  @post.save
-
   let(:valid_attributes) {
-    { title: FFaker::CheesyLingo, body: FFaker::Lorem.paragraphs, user_id: 1 }
+    skip("Add a hash of attributes valid for your model")
   }
 
   let(:invalid_attributes) {
@@ -45,12 +39,12 @@ RSpec.describe PostsController, type: :controller do
 
   # This should return the minimal set of values that should be in the session
   # in order to pass any filters (e.g. authentication) defined in
-  # PostsController. Be sure to keep this updated too.
+  # GalleryphotosController. Be sure to keep this updated too.
   let(:valid_session) { {} }
 
   describe "GET #index" do
     it "returns a success response" do
-      post = Post.create! valid_attributes
+      galleryphoto = Galleryphoto.create! valid_attributes
       get :index, params: {}, session: valid_session
       expect(response).to be_success
     end
@@ -58,8 +52,8 @@ RSpec.describe PostsController, type: :controller do
 
   describe "GET #show" do
     it "returns a success response" do
-      post = Post.create! valid_attributes
-      get :show, params: {id: post.to_param}, session: valid_session
+      galleryphoto = Galleryphoto.create! valid_attributes
+      get :show, params: {id: galleryphoto.to_param}, session: valid_session
       expect(response).to be_success
     end
   end
@@ -73,29 +67,29 @@ RSpec.describe PostsController, type: :controller do
 
   describe "GET #edit" do
     it "returns a success response" do
-      post = Post.create! valid_attributes
-      get :edit, params: {id: post.to_param}, session: valid_session
+      galleryphoto = Galleryphoto.create! valid_attributes
+      get :edit, params: {id: galleryphoto.to_param}, session: valid_session
       expect(response).to be_success
     end
   end
 
   describe "POST #create" do
     context "with valid params" do
-      it "creates a new Post" do
+      it "creates a new Galleryphoto" do
         expect {
-          post :create, params: {post: valid_attributes}, session: valid_session
-        }.to change(Post, :count).by(1)
+          post :create, params: {galleryphoto: valid_attributes}, session: valid_session
+        }.to change(Galleryphoto, :count).by(1)
       end
 
-      it "redirects to the created post" do
-        post :create, params: {post: valid_attributes}, session: valid_session
-        expect(response).to redirect_to(Post.last)
+      it "redirects to the created galleryphoto" do
+        post :create, params: {galleryphoto: valid_attributes}, session: valid_session
+        expect(response).to redirect_to(Galleryphoto.last)
       end
     end
 
     context "with invalid params" do
       it "returns a success response (i.e. to display the 'new' template)" do
-        post :create, params: {post: invalid_attributes}, session: valid_session
+        post :create, params: {galleryphoto: invalid_attributes}, session: valid_session
         expect(response).to be_success
       end
     end
@@ -107,41 +101,41 @@ RSpec.describe PostsController, type: :controller do
         skip("Add a hash of attributes valid for your model")
       }
 
-      it "updates the requested post" do
-        post = Post.create! valid_attributes
-        put :update, params: {id: post.to_param, post: new_attributes}, session: valid_session
-        post.reload
+      it "updates the requested galleryphoto" do
+        galleryphoto = Galleryphoto.create! valid_attributes
+        put :update, params: {id: galleryphoto.to_param, galleryphoto: new_attributes}, session: valid_session
+        galleryphoto.reload
         skip("Add assertions for updated state")
       end
 
-      it "redirects to the post" do
-        post = Post.create! valid_attributes
-        put :update, params: {id: post.to_param, post: valid_attributes}, session: valid_session
-        expect(response).to redirect_to(post)
+      it "redirects to the galleryphoto" do
+        galleryphoto = Galleryphoto.create! valid_attributes
+        put :update, params: {id: galleryphoto.to_param, galleryphoto: valid_attributes}, session: valid_session
+        expect(response).to redirect_to(galleryphoto)
       end
     end
 
     context "with invalid params" do
       it "returns a success response (i.e. to display the 'edit' template)" do
-        post = Post.create! valid_attributes
-        put :update, params: {id: post.to_param, post: invalid_attributes}, session: valid_session
+        galleryphoto = Galleryphoto.create! valid_attributes
+        put :update, params: {id: galleryphoto.to_param, galleryphoto: invalid_attributes}, session: valid_session
         expect(response).to be_success
       end
     end
   end
 
   describe "DELETE #destroy" do
-    it "destroys the requested post" do
-      post = Post.create! valid_attributes
+    it "destroys the requested galleryphoto" do
+      galleryphoto = Galleryphoto.create! valid_attributes
       expect {
-        delete :destroy, params: {id: post.to_param}, session: valid_session
-      }.to change(Post, :count).by(-1)
+        delete :destroy, params: {id: galleryphoto.to_param}, session: valid_session
+      }.to change(Galleryphoto, :count).by(-1)
     end
 
-    it "redirects to the posts list" do
-      post = Post.create! valid_attributes
-      delete :destroy, params: {id: post.to_param}, session: valid_session
-      expect(response).to redirect_to(posts_url)
+    it "redirects to the galleryphotos list" do
+      galleryphoto = Galleryphoto.create! valid_attributes
+      delete :destroy, params: {id: galleryphoto.to_param}, session: valid_session
+      expect(response).to redirect_to(galleryphotos_url)
     end
   end
 

@@ -1,9 +1,5 @@
 Rails.application.routes.draw do
 
-  get 'messages/new'
-
-  get 'messages/create'
-
   # The priority is based upon order of creation: first created -> highest priority.
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   # See how all your routes lay out with "rake routes".
@@ -14,11 +10,13 @@ Rails.application.routes.draw do
 
   get "home/index"
 
+  get 'messages/new'
+  get 'messages/create'
+
   get 'contact', to: 'messages#new', as: 'contact'
   post 'contact', to: 'messages#create'
 
   get "home/presentations"
-
 
   resources :galleries do
     resources :galleryphotos
@@ -80,4 +78,8 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
+
+  # Route all missing paths to 404 page
+  get 'users_path', to: "home#missing"
+  get '*path', to: "home#missing"
 end

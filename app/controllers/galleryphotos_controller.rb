@@ -3,11 +3,17 @@ class GalleryphotosController < ApplicationController
 
   def create
     @gallery = Gallery.find(params[:gallery_id])
-    logger.debug "gallery found: #{@gallery.attributes.inspect}"
     @galleryphoto = @gallery.galleryphotos.new(galleryphoto_params)
     @title = "Create Photo"
+  end
 
-    logger.debug "New galleryphoto posted: #{@galleryphoto.attributes.inspect}"
+  def new
+    @galleryphoto = Galleryphoto.new
+    @title = "New Photo"
+
+    respond_to do |format|
+      format.html
+    end
   end
 
   def show

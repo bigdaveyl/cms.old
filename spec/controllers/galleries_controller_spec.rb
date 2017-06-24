@@ -17,147 +17,125 @@ require 'rails_helper'
 # is no simpler way to get a handle on the object needed for the example.
 # Message expectations are only used when there is no simpler way to specify
 # that an instance is receiving a specific message.
+#
+# Also compared to earlier versions of this generator, there are no longer any
+# expectations of assigns and templates rendered. These features have been
+# removed from Rails core in Rails 5, but can be added back in via the
+# `rails-controller-testing` gem.
 
-describe GalleriesController do
-
+RSpec.describe GalleriesController, type: :controller do
+  login_user
+  
   # This should return the minimal set of attributes required to create a valid
   # Gallery. As you add validations to Gallery, be sure to
-  # update the return value of this method accordingly.
-  def valid_attributes
-    {}
-  end
-  
+  # adjust the attributes here as well.
+  let(:valid_attributes) {
+    skip("Add a hash of attributes valid for your model")
+  }
+
+  let(:invalid_attributes) {
+    skip("Add a hash of attributes invalid for your model")
+  }
+
   # This should return the minimal set of values that should be in the session
   # in order to pass any filters (e.g. authentication) defined in
   # GalleriesController. Be sure to keep this updated too.
-  def valid_session
-    {}
-  end
+  let(:valid_session) { {} }
 
-  describe "GET index" do
-    it "assigns all galleries as @galleries" do
+  describe "GET #index" do
+    it "returns a success response" do
       gallery = Gallery.create! valid_attributes
-      get :index, {}, valid_session
-      assigns(:galleries).should eq([gallery])
+      get :index, params: {}, session: valid_session
+      expect(response).to be_success
     end
   end
 
-  describe "GET show" do
-    it "assigns the requested gallery as @gallery" do
+  describe "GET #show" do
+    it "returns a success response" do
       gallery = Gallery.create! valid_attributes
-      get :show, {:id => gallery.to_param}, valid_session
-      assigns(:gallery).should eq(gallery)
+      get :show, params: {id: gallery.to_param}, session: valid_session
+      expect(response).to be_success
     end
   end
 
-  describe "GET new" do
-    it "assigns a new gallery as @gallery" do
-      get :new, {}, valid_session
-      assigns(:gallery).should be_a_new(Gallery)
+  describe "GET #new" do
+    it "returns a success response" do
+      get :new, params: {}, session: valid_session
+      expect(response).to be_success
     end
   end
 
-  describe "GET edit" do
-    it "assigns the requested gallery as @gallery" do
+  describe "GET #edit" do
+    it "returns a success response" do
       gallery = Gallery.create! valid_attributes
-      get :edit, {:id => gallery.to_param}, valid_session
-      assigns(:gallery).should eq(gallery)
+      get :edit, params: {id: gallery.to_param}, session: valid_session
+      expect(response).to be_success
     end
   end
 
-  describe "POST create" do
-    describe "with valid params" do
+  describe "POST #create" do
+    context "with valid params" do
       it "creates a new Gallery" do
         expect {
-          post :create, {:gallery => valid_attributes}, valid_session
+          post :create, params: {gallery: valid_attributes}, session: valid_session
         }.to change(Gallery, :count).by(1)
       end
 
-      it "assigns a newly created gallery as @gallery" do
-        post :create, {:gallery => valid_attributes}, valid_session
-        assigns(:gallery).should be_a(Gallery)
-        assigns(:gallery).should be_persisted
-      end
-
       it "redirects to the created gallery" do
-        post :create, {:gallery => valid_attributes}, valid_session
-        response.should redirect_to(Gallery.last)
+        post :create, params: {gallery: valid_attributes}, session: valid_session
+        expect(response).to redirect_to(Gallery.last)
       end
     end
 
-    describe "with invalid params" do
-      it "assigns a newly created but unsaved gallery as @gallery" do
-        # Trigger the behavior that occurs when invalid params are submitted
-        Gallery.any_instance.stub(:save).and_return(false)
-        post :create, {:gallery => {}}, valid_session
-        assigns(:gallery).should be_a_new(Gallery)
-      end
-
-      it "re-renders the 'new' template" do
-        # Trigger the behavior that occurs when invalid params are submitted
-        Gallery.any_instance.stub(:save).and_return(false)
-        post :create, {:gallery => {}}, valid_session
-        response.should render_template("new")
+    context "with invalid params" do
+      it "returns a success response (i.e. to display the 'new' template)" do
+        post :create, params: {gallery: invalid_attributes}, session: valid_session
+        expect(response).to be_success
       end
     end
   end
 
-  describe "PUT update" do
-    describe "with valid params" do
+  describe "PUT #update" do
+    context "with valid params" do
+      let(:new_attributes) {
+        skip("Add a hash of attributes valid for your model")
+      }
+
       it "updates the requested gallery" do
         gallery = Gallery.create! valid_attributes
-        # Assuming there are no other galleries in the database, this
-        # specifies that the Gallery created on the previous line
-        # receives the :update_attributes message with whatever params are
-        # submitted in the request.
-        Gallery.any_instance.should_receive(:update_attributes).with({'these' => 'params'})
-        put :update, {:id => gallery.to_param, :gallery => {'these' => 'params'}}, valid_session
-      end
-
-      it "assigns the requested gallery as @gallery" do
-        gallery = Gallery.create! valid_attributes
-        put :update, {:id => gallery.to_param, :gallery => valid_attributes}, valid_session
-        assigns(:gallery).should eq(gallery)
+        put :update, params: {id: gallery.to_param, gallery: new_attributes}, session: valid_session
+        gallery.reload
+        skip("Add assertions for updated state")
       end
 
       it "redirects to the gallery" do
         gallery = Gallery.create! valid_attributes
-        put :update, {:id => gallery.to_param, :gallery => valid_attributes}, valid_session
-        response.should redirect_to(gallery)
+        put :update, params: {id: gallery.to_param, gallery: valid_attributes}, session: valid_session
+        expect(response).to redirect_to(gallery)
       end
     end
 
-    describe "with invalid params" do
-      it "assigns the gallery as @gallery" do
+    context "with invalid params" do
+      it "returns a success response (i.e. to display the 'edit' template)" do
         gallery = Gallery.create! valid_attributes
-        # Trigger the behavior that occurs when invalid params are submitted
-        Gallery.any_instance.stub(:save).and_return(false)
-        put :update, {:id => gallery.to_param, :gallery => {}}, valid_session
-        assigns(:gallery).should eq(gallery)
-      end
-
-      it "re-renders the 'edit' template" do
-        gallery = Gallery.create! valid_attributes
-        # Trigger the behavior that occurs when invalid params are submitted
-        Gallery.any_instance.stub(:save).and_return(false)
-        put :update, {:id => gallery.to_param, :gallery => {}}, valid_session
-        response.should render_template("edit")
+        put :update, params: {id: gallery.to_param, gallery: invalid_attributes}, session: valid_session
+        expect(response).to be_success
       end
     end
   end
 
-  describe "DELETE destroy" do
+  describe "DELETE #destroy" do
     it "destroys the requested gallery" do
       gallery = Gallery.create! valid_attributes
       expect {
-        delete :destroy, {:id => gallery.to_param}, valid_session
+        delete :destroy, params: {id: gallery.to_param}, session: valid_session
       }.to change(Gallery, :count).by(-1)
     end
 
     it "redirects to the galleries list" do
       gallery = Gallery.create! valid_attributes
-      delete :destroy, {:id => gallery.to_param}, valid_session
-      response.should redirect_to(galleries_url)
+      delete :destroy, params: {id: gallery.to_param}, session: valid_session
+      expect(response).to redirect_to(galleries_url)
     end
   end
 

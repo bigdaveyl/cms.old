@@ -8,8 +8,8 @@ describe "user sign in" do
     fill_in "Username",    :with => "alindeman@example.com"
     fill_in "Password", :with => "ilovegrapes"
 
-    click_button "Sign in"
+    click_button "Log in"
 
-    page.should have_content("Signed in successfully.")
+    expect(page).to have_content("Signed in")
   end
 end

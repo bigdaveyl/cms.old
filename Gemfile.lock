@@ -166,8 +166,7 @@ GEM
     factory_girl_rails (4.8.0)
       factory_girl (~> 4.8.0)
       railties (>= 3.0.0)
-    faker (1.7.3)
-      i18n (~> 0.5)
+    ffaker (2.5.0)
     ffi (1.9.18)
     globalid (0.4.0)
     highline (1.7.8)
@@ -315,7 +314,7 @@ DEPENDENCIES
   devise-encryptable!
   diff-lcs
   factory_girl_rails
-  faker
+  ffaker
   ffi
   highline
   jbuilder (~> 2.5)
