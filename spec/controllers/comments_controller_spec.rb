@@ -24,16 +24,20 @@ require 'rails_helper'
 # `rails-controller-testing` gem.
 
 RSpec.describe CommentsController, type: :controller do
+  login_user
+
+  let(:testpost) { FactoryGirl.create(:post, user: @user) } 
+  
 
   # This should return the minimal set of attributes required to create a valid
   # Comment. As you add validations to Comment, be sure to
   # adjust the attributes here as well.
   let(:valid_attributes) {
-    skip("Add a hash of attributes valid for your model")
+    FactoryGirl.build(:comment, post: testpost).attributes
   }
 
   let(:invalid_attributes) {
-    skip("Add a hash of attributes invalid for your model")
+    { name: "", body: "", post: testpost }
   }
 
   # This should return the minimal set of values that should be in the session
@@ -41,34 +45,19 @@ RSpec.describe CommentsController, type: :controller do
   # CommentsController. Be sure to keep this updated too.
   let(:valid_session) { {} }
 
-  describe "GET #index" do
-    it "returns a success response" do
-      comment = Comment.create! valid_attributes
-      get :index, params: {}, session: valid_session
-      expect(response).to be_success
-    end
-  end
-
   describe "GET #show" do
     it "returns a success response" do
       comment = Comment.create! valid_attributes
-      get :show, params: {id: comment.to_param}, session: valid_session
+      get :show, params: {:post_id => testpost.id, id: comment.to_param}
       expect(response).to be_success
     end
   end
 
   describe "GET #new" do
-    it "returns a success response" do
-      get :new, params: {}, session: valid_session
-      expect(response).to be_success
-    end
-  end
-
-  describe "GET #edit" do
-    it "returns a success response" do
-      comment = Comment.create! valid_attributes
-      get :edit, params: {id: comment.to_param}, session: valid_session
-      expect(response).to be_success
+    it "should be a success" do
+      get :new, params: {:post_id => testpost.id}
+      expect(assigns(:comment)).to_not eq nil
+      expect(assigns(:comment)).to be_a_new(Comment)
     end
   end
 
@@ -76,49 +65,20 @@ RSpec.describe CommentsController, type: :controller do
     context "with valid params" do
       it "creates a new Comment" do
         expect {
-          post :create, params: {comment: valid_attributes}, session: valid_session
+          post :create, params: {:post_id => testpost.id, comment: valid_attributes}
         }.to change(Comment, :count).by(1)
       end
 
       it "redirects to the created comment" do
-        post :create, params: {comment: valid_attributes}, session: valid_session
-        expect(response).to redirect_to(Comment.last)
+        post  :create, params: {:post_id => testpost.id, comment: valid_attributes}
+        expect(response).to redirect_to(testpost)
       end
     end
 
     context "with invalid params" do
       it "returns a success response (i.e. to display the 'new' template)" do
-        post :create, params: {comment: invalid_attributes}, session: valid_session
-        expect(response).to be_success
-      end
-    end
-  end
-
-  describe "PUT #update" do
-    context "with valid params" do
-      let(:new_attributes) {
-        skip("Add a hash of attributes valid for your model")
-      }
-
-      it "updates the requested comment" do
-        comment = Comment.create! valid_attributes
-        put :update, params: {id: comment.to_param, comment: new_attributes}, session: valid_session
-        comment.reload
-        skip("Add assertions for updated state")
-      end
-
-      it "redirects to the comment" do
-        comment = Comment.create! valid_attributes
-        put :update, params: {id: comment.to_param, comment: valid_attributes}, session: valid_session
-        expect(response).to redirect_to(comment)
-      end
-    end
-
-    context "with invalid params" do
-      it "returns a success response (i.e. to display the 'edit' template)" do
-        comment = Comment.create! valid_attributes
-        put :update, params: {id: comment.to_param, comment: invalid_attributes}, session: valid_session
-        expect(response).to be_success
+        post :create, params: {:post_id => testpost.id, comment: invalid_attributes}
+        expect(response).to redirect_to(testpost)
       end
     end
   end
@@ -127,14 +87,14 @@ RSpec.describe CommentsController, type: :controller do
     it "destroys the requested comment" do
       comment = Comment.create! valid_attributes
       expect {
-        delete :destroy, params: {id: comment.to_param}, session: valid_session
+        delete :destroy, params: {:post_id => testpost.id, id: comment.to_param}
       }.to change(Comment, :count).by(-1)
     end
 
     it "redirects to the comments list" do
       comment = Comment.create! valid_attributes
-      delete :destroy, params: {id: comment.to_param}, session: valid_session
-      expect(response).to redirect_to(comments_url)
+      delete :destroy, params: {:post_id => testpost.id, id: comment.to_param}
+      expect(response).to redirect_to(testpost)
     end
   end
 

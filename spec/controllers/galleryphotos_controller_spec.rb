@@ -24,6 +24,7 @@ require 'rails_helper'
 # `rails-controller-testing` gem.
 
 RSpec.describe GalleryphotosController, type: :controller do
+  login_user 
 
   # This should return the minimal set of attributes required to create a valid
   # Galleryphoto. As you add validations to Galleryphoto, be sure to
@@ -41,25 +42,17 @@ RSpec.describe GalleryphotosController, type: :controller do
   # GalleryphotosController. Be sure to keep this updated too.
   let(:valid_session) { {} }
 
-  describe "GET #index" do
-    it "returns a success response" do
-      galleryphoto = Galleryphoto.create! valid_attributes
-      get :index, params: {}, session: valid_session
-      expect(response).to be_success
-    end
-  end
-
   describe "GET #show" do
     it "returns a success response" do
       galleryphoto = Galleryphoto.create! valid_attributes
-      get :show, params: {id: galleryphoto.to_param}, session: valid_session
+      get :show, params: {:gallery_id => testpost.id, id: galleryphoto.to_param}
       expect(response).to be_success
     end
   end
 
   describe "GET #new" do
     it "returns a success response" do
-      get :new, params: {}, session: valid_session
+      get :new, params: {}
       expect(response).to be_success
     end
   end
@@ -67,7 +60,7 @@ RSpec.describe GalleryphotosController, type: :controller do
   describe "GET #edit" do
     it "returns a success response" do
       galleryphoto = Galleryphoto.create! valid_attributes
-      get :edit, params: {id: galleryphoto.to_param}, session: valid_session
+      get :edit, params: {id: galleryphoto.to_param}
       expect(response).to be_success
     end
   end
@@ -76,19 +69,19 @@ RSpec.describe GalleryphotosController, type: :controller do
     context "with valid params" do
       it "creates a new Galleryphoto" do
         expect {
-          post :create, params: {galleryphoto: valid_attributes}, session: valid_session
+          post :create, params: {galleryphoto: valid_attributes}
         }.to change(Galleryphoto, :count).by(1)
       end
 
       it "redirects to the created galleryphoto" do
-        post :create, params: {galleryphoto: valid_attributes}, session: valid_session
+        post :create, params: {galleryphoto: valid_attributes}
         expect(response).to redirect_to(Galleryphoto.last)
       end
     end
 
     context "with invalid params" do
       it "returns a success response (i.e. to display the 'new' template)" do
-        post :create, params: {galleryphoto: invalid_attributes}, session: valid_session
+        post :create, params: {galleryphoto: invalid_attributes}
         expect(response).to be_success
       end
     end
@@ -102,14 +95,14 @@ RSpec.describe GalleryphotosController, type: :controller do
 
       it "updates the requested galleryphoto" do
         galleryphoto = Galleryphoto.create! valid_attributes
-        put :update, params: {id: galleryphoto.to_param, galleryphoto: new_attributes}, session: valid_session
+        put :update, params: {id: galleryphoto.to_param, galleryphoto: new_attributes}
         galleryphoto.reload
         skip("Add assertions for updated state")
       end
 
       it "redirects to the galleryphoto" do
         galleryphoto = Galleryphoto.create! valid_attributes
-        put :update, params: {id: galleryphoto.to_param, galleryphoto: valid_attributes}, session: valid_session
+        put :update, params: {id: galleryphoto.to_param, galleryphoto: valid_attributes}
         expect(response).to redirect_to(galleryphoto)
       end
     end
@@ -117,7 +110,7 @@ RSpec.describe GalleryphotosController, type: :controller do
     context "with invalid params" do
       it "returns a success response (i.e. to display the 'edit' template)" do
         galleryphoto = Galleryphoto.create! valid_attributes
-        put :update, params: {id: galleryphoto.to_param, galleryphoto: invalid_attributes}, session: valid_session
+        put :update, params: {id: galleryphoto.to_param, galleryphoto: invalid_attributes}
         expect(response).to be_success
       end
     end
@@ -127,13 +120,13 @@ RSpec.describe GalleryphotosController, type: :controller do
     it "destroys the requested galleryphoto" do
       galleryphoto = Galleryphoto.create! valid_attributes
       expect {
-        delete :destroy, params: {id: galleryphoto.to_param}, session: valid_session
+        delete :destroy, params: {id: galleryphoto.to_param}
       }.to change(Galleryphoto, :count).by(-1)
     end
 
     it "redirects to the galleryphotos list" do
       galleryphoto = Galleryphoto.create! valid_attributes
-      delete :destroy, params: {id: galleryphoto.to_param}, session: valid_session
+      delete :destroy, params: {id: galleryphoto.to_param}
       expect(response).to redirect_to(galleryphotos_url)
     end
   end

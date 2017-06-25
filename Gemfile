@@ -46,6 +46,8 @@ group :development, :test do
   gem 'rspec'
   gem 'rspec-rails'
   gem 'factory_girl_rails'
+  gem 'rails-controller-testing'
+  gem 'rails-dom-testing'
   gem 'database_cleaner'
   gem 'ffaker'
   gem 'sqlite3'

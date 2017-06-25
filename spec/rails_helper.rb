@@ -9,6 +9,7 @@ require 'rspec/rails'
 require 'capybara/rails'
 require 'ffaker'
 require 'devise'
+require 'factory_girl_rails'
 require_relative 'support/controller_macros'
 
 # Requires supporting ruby files with custom matchers and macros, etc, in
