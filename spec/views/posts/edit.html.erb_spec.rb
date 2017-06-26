@@ -9,8 +9,9 @@ RSpec.describe "posts/edit", type: :view do
     render
   end
 
-  it "renders the edit post form" do
+  it "renders the edit post error if not logged in" do
     render
-    assert_select "form[action=?][method=?]", post_path(testpost), "post" 
+    #assert_select "form[action=?][method=?]", post_path(testpost), "post" 
+    assert_select "form", false
   end
 end

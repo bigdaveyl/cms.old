@@ -1,8 +1,11 @@
 require 'rails_helper'
 
 RSpec.describe "comments/new", type: :view do
+  let(:myuser) { FactoryGirl.create(:user) }
+  let(:mypost) { FactoryGirl.create(:post, user: myuser) }
+
   before(:each) do
-    assign(:comment, Comment.new())
+    assign(:comment, FactoryGirl.create(:comment, post: mypost))
   end
 
   it "renders new comment form" do

@@ -7,8 +7,7 @@ RSpec.describe "messages/new", type: :view do
 
   it "renders new message form" do
     render
-
-    assert_select "form[action=?][method=?]", messages_new_path, "post" do
+    assert_select "form[action=?][accept-charset=?][method=?]", contact_path, "UTF-8", "post" do
     end
   end
 end
