@@ -93,7 +93,7 @@ RSpec.describe GalleriesController, type: :controller do
 
   describe "PUT #update" do
     context "with valid params" do
-      let(:new_attributes) { FactoryGirl.create(:gallery).attributes }
+      let(:new_attributes) { { title: "updated title", description: "updated description" } }
 
       it "updates the requested gallery" do
         gallery = Gallery.create! valid_attributes
