@@ -9,3 +9,7 @@ public/system/users/
 config/aws.yml
 config/secrets.yml
 config/production.rb
+config/environments/production.rb
+config/storage.yml
+vendor/bundle/
+vendor/ruby/

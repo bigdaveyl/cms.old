@@ -6,7 +6,7 @@ git_source(:github) do |repo_name|
 end
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', :github => 'rails/rails', :branch => '5-1-stable'
+gem 'rails', :github => 'rails/rails', :branch => '5-2-stable'
 # Use mysql2 as the database for Active Record
 gem 'mysql2'
 gem 'puma', '~> 3.7'
@@ -39,7 +39,7 @@ gem 'capistrano-chruby', github: 'capistrano/chruby', group: :development
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'byebug'
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '~> 2.7.0'
   gem 'selenium-webdriver'
@@ -63,13 +63,13 @@ group :development do
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+gem 'tzinfo-data'
 
 gem 'cancancan'
 
 gem 'bigdecimal', ">=1.2.7"
 
-gem 'nokogiri'
+gem 'nokogiri',  "~> 1.8.2"
 gem 'rubyzip'
 gem 'addressable'
 gem 'ffi'
@@ -89,7 +89,7 @@ gem 'RedCloth'
 gem 'devise',             :github => 'plataformatec/devise'
 gem 'devise-encryptable', :github => 'plataformatec/devise-encryptable'
 
-gem 'bundler', '1.13.7'
+gem 'bundler'
 
 gem 'highline'
 
@@ -98,3 +98,16 @@ gem 'mini_portile2'
 gem 'rb-fsevent'
 
 gem 'mail_form'
+
+gem 'railties'
+
+gem 'bootsnap'
+
+gem 'sprockets',  "~> 3.7.2"
+
+gem 'loofah',  "~> 2.2.1"
+
+gem 'rails-html-sanitizer',  "~> 1.0.4"
+
+
+
