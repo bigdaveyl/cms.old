@@ -29,7 +29,7 @@ RSpec.describe PostsController, type: :controller do
   # This should return the minimal set of attributes required to create a valid
   # Post. As you add validations to Post, be sure to
   # adjust the attributes here as well.
-  let(:valid_attributes) { FactoryGirl.build(:post, user: @user).attributes }
+  let(:valid_attributes) { FactoryBot.build(:post, user: @user).attributes }
 
   let(:invalid_attributes) { { title: "", content: "", user: @user } }
 
@@ -42,7 +42,7 @@ RSpec.describe PostsController, type: :controller do
     it "returns a success response" do
       post = Post.create! valid_attributes
       get :index, params: {}
-      expect(response).to be_success
+      expect(response).to be_successful
     end
   end
 
@@ -50,14 +50,14 @@ RSpec.describe PostsController, type: :controller do
     it "returns a success response" do
       post = Post.create! valid_attributes
       get :show, params: {id: post.to_param}
-      expect(response).to be_success
+      expect(response).to be_successful
     end
   end
 
   describe "GET #new" do
     it "returns a success response" do
       get :new, params: {}
-      expect(response).to be_success
+      expect(response).to be_successful
     end
   end
 
@@ -65,7 +65,7 @@ RSpec.describe PostsController, type: :controller do
     it "returns a success response" do
       post = Post.create! valid_attributes
       get :edit, params: {id: post.to_param}
-      expect(response).to be_success
+      expect(response).to be_successful
     end
   end
 
@@ -86,7 +86,7 @@ RSpec.describe PostsController, type: :controller do
     context "with invalid params" do
       it "returns a success response (i.e. to display the 'new' template)" do
         post :create, params: {post: invalid_attributes}
-        expect(response).to be_success
+        expect(response).to be_successful
       end
     end
   end
@@ -115,7 +115,7 @@ RSpec.describe PostsController, type: :controller do
       it "returns a success response (i.e. to display the 'edit' template)" do
         post = Post.create! valid_attributes
         put :update, params: {id: post.to_param, post: invalid_attributes}
-        expect(response).to be_success
+        expect(response).to be_successful
       end
     end
   end

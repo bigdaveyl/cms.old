@@ -1,8 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe "posts/edit", type: :view do
-  let(:myuser) { FactoryGirl.create(:user) }
-  let(:testpost) { FactoryGirl.create(:post, user: myuser) } 
+  let(:myuser) { FactoryBot.create(:user) }
+  let(:testpost) { FactoryBot.create(:post, user: myuser) } 
 
   before(:each) do
     assign(:post, testpost)

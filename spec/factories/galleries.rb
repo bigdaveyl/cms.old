@@ -1,4 +1,4 @@
-FactoryGirl.define do
+FactoryBot.define do
   factory :gallery do
     description  { FFaker::CheesyLingo.title }
     title  { FFaker::CheesyLingo.words }

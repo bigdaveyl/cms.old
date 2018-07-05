@@ -45,7 +45,7 @@ RSpec.describe UsersController, type: :controller do
     it "returns a success response" do
       user = User.create! valid_attributes
       get :show, params: {id: user.to_param}
-      expect(response).to be_success
+      expect(response).to be_successful
     end
   end
 
@@ -53,7 +53,7 @@ RSpec.describe UsersController, type: :controller do
     it "returns a success response" do
       user = User.create! valid_attributes
       get :edit, params: {id: user.to_param}
-      expect(response).to be_success
+      expect(response).to be_successful
     end
   end
 

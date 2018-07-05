@@ -38,9 +38,9 @@ RSpec.describe MessagesController, type: :controller do
   let(:valid_session) { {} }
 
   describe "GET #new" do
-    it "returns a success response" do
+    it "returns a successful response" do
       get :new, params: {}, session: valid_session
-      expect(response).to be_success
+      expect(response).to be_successful
     end
   end
 
@@ -59,9 +59,9 @@ RSpec.describe MessagesController, type: :controller do
     end
 
     context "with invalid params" do
-      it "returns a success response (i.e. to display the 'new' template)" do
+      it "returns a successful response (i.e. to display the 'new' template)" do
         post :create, params: {message: invalid_attributes}, session: valid_session
-        expect(response).to be_success
+        expect(response).to be_successful
       end
     end
   end

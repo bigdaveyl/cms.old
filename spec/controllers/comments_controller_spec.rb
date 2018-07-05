@@ -26,14 +26,14 @@ require 'rails_helper'
 RSpec.describe CommentsController, type: :controller do
   login_user
 
-  let(:testpost) { FactoryGirl.create(:post, user: @user) } 
+  let(:testpost) { FactoryBot.create(:post, user: @user) } 
   
 
   # This should return the minimal set of attributes required to create a valid
   # Comment. As you add validations to Comment, be sure to
   # adjust the attributes here as well.
   let(:valid_attributes) {
-    FactoryGirl.build(:comment, post: testpost).attributes
+    FactoryBot.build(:comment, post: testpost).attributes
   }
 
   let(:invalid_attributes) {
@@ -46,10 +46,10 @@ RSpec.describe CommentsController, type: :controller do
   let(:valid_session) { {} }
 
   describe "GET #show" do
-    it "returns a success response" do
+    it "returns a successful response" do
       comment = Comment.create! valid_attributes
       get :show, params: {:post_id => testpost.id, id: comment.to_param}
-      expect(response).to be_success
+      expect(response).to be_successful
     end
   end
 
@@ -76,7 +76,7 @@ RSpec.describe CommentsController, type: :controller do
     end
 
     context "with invalid params" do
-      it "returns a success response (i.e. to display the 'new' template)" do
+      it "returns a successful response (i.e. to display the 'new' template)" do
         post :create, params: {:post_id => testpost.id, comment: invalid_attributes}
         expect(response).to redirect_to(testpost)
       end

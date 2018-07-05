@@ -1,11 +1,11 @@
 require 'rails_helper'
 
 RSpec.describe "posts/index", type: :view do
-  let(:myuser) { FactoryGirl.create(:user) }
+  let(:myuser) { FactoryBot.create(:user) }
   before(:each) do
     assign(:posts, [
-      FactoryGirl.create(:post, user: myuser), 
-      FactoryGirl.create(:post, user: myuser)
+      FactoryBot.create(:post, user: myuser), 
+      FactoryBot.create(:post, user: myuser)
     ])
   end
 

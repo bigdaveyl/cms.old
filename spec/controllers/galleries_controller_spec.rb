@@ -29,7 +29,7 @@ RSpec.describe GalleriesController, type: :controller do
   # This should return the minimal set of attributes required to create a valid
   # Gallery. As you add validations to Gallery, be sure to
   # adjust the attributes here as well.
-  let(:valid_attributes) { FactoryGirl.build(:gallery).attributes }
+  let(:valid_attributes) { FactoryBot.build(:gallery).attributes }
 
   let(:invalid_attributes) { { title: "", description: "" } }
 
@@ -39,33 +39,33 @@ RSpec.describe GalleriesController, type: :controller do
   let(:valid_session) { {} }
 
   describe "GET #index" do
-    it "returns a success response" do
+    it "returns a successful response" do
       gallery = Gallery.create! valid_attributes
       get :index, params: {}
-      expect(response).to be_success
+      expect(response).to be_successful
     end
   end
 
   describe "GET #show" do
-    it "returns a success response" do
+    it "returns a successful response" do
       gallery = Gallery.create! valid_attributes
       get :show, params: {id: gallery.to_param}
-      expect(response).to be_success
+      expect(response).to be_successful
     end
   end
 
   describe "GET #new" do
-    it "returns a success response" do
+    it "returns a successful response" do
       get :new, params: {}
-      expect(response).to be_success
+      expect(response).to be_successful
     end
   end
 
   describe "GET #edit" do
-    it "returns a success response" do
+    it "returns a successful response" do
       gallery = Gallery.create! valid_attributes
       get :edit, params: {id: gallery.to_param}
-      expect(response).to be_success
+      expect(response).to be_successful
     end
   end
 
@@ -84,9 +84,9 @@ RSpec.describe GalleriesController, type: :controller do
     end
 
     context "with invalid params" do
-      it "returns a success response (i.e. to display the 'new' template)" do
+      it "returns a successful response (i.e. to display the 'new' template)" do
         post :create, params: {gallery: invalid_attributes}
-        expect(response).to be_success
+        expect(response).to be_successful
       end
     end
   end
@@ -110,10 +110,10 @@ RSpec.describe GalleriesController, type: :controller do
     end
 
     context "with invalid params" do
-      it "returns a success response (i.e. to display the 'edit' template)" do
+      it "returns a successful response (i.e. to display the 'edit' template)" do
         gallery = Gallery.create! valid_attributes
         put :update, params: {id: gallery.to_param, gallery: invalid_attributes}
-        expect(response).to be_success
+        expect(response).to be_successful
       end
     end
   end

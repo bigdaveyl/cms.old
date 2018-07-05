@@ -1,4 +1,4 @@
-FactoryGirl.define do
+FactoryBot.define do
   factory :comment do
     name { FFaker::Name.name }
     body  { FFaker::Lorem.paragraphs }
