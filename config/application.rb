@@ -33,5 +33,8 @@ module Cms
 
    config.rakismet.key = '996903959b05'
    config.rakismet.url = 'http://www.thelinuxgeek.org/'
+
+   config.active_record.sqlite3.represent_boolean_as_integer = true
+
   end
 end
