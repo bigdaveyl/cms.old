@@ -8,11 +8,6 @@
     <%= javascript_include_tag 'application' %>
     <%= csrf_meta_tags %>
     <%= auto_discovery_link_tag :rss, posts_path(:format => :rss) %>
-    <script language="javascript">
-      $(document).ready(function() {
-        $('#textile').markItUp(myTextileSettings);
-      });
-    </script>
     <%= render 'layouts/footer' %>
   </head>
   <body>

@@ -1,0 +1,9 @@
+{
+  "name": "cms",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:bigdaveyl/cms.git",
+  "author": "David Liana <dliana@frontiernet.net>",
+  "license": "GPL-3.0",
+  "dependencies": {}
+}
