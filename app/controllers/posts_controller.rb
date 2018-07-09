@@ -6,6 +6,8 @@ class PostsController < ApplicationController
   load_and_authorize_resource
   #skip_authorization_check :only => [:show, :index]
 
+  protect_from_forgery except: :post
+
   # GET /posts
   # GET /posts.json
   def index

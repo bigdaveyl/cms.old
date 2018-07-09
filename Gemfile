@@ -116,3 +116,5 @@ gem 'loofah'
 gem 'rails-html-sanitizer'
 
 gem 'yarn'
+
+gem 'markitup-rails'

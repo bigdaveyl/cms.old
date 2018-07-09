@@ -13,4 +13,6 @@
 //= require jquery
 //= require jquery_ujs
 //= require jquery-ui
+//= require markitup
+//= require markitup/sets/textile/set
 //= require_tree .

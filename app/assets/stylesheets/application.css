@@ -12,4 +12,6 @@
  *
  *= require_tree .
  *= require_self
+ *= require markitup/skins/markitup/style
+ *= require markitup/sets/textile/style
  */

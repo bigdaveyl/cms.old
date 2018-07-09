@@ -82,4 +82,6 @@ Rails.application.routes.draw do
   # Route all missing paths to 404 page
   get 'users_path', to: "home#missing"
   get '*path', to: "home#missing"
+
+  mount Markitup::Rails::Engine, at: "markitup", as: "markitup"
 end

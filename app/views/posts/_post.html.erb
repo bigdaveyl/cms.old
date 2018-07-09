@@ -1,9 +1,9 @@
-<h1><%= link_to_unless_current(post.title, post) %></h1>
+<h1><%= link_to_unless_current(post.title.html_safe, post) %></h1>
 by <%= link_to post.user.username, user_path(post.user_id) %> <%= post.created_at.strftime("on %A, %B %d %Y at %H:%M %Z") %><br />
 <br />
 
 <p>
-<%= raw post.body%>
+<%= post.body.html_safe%>
 </p>
 
 <% if can? :update, post %>

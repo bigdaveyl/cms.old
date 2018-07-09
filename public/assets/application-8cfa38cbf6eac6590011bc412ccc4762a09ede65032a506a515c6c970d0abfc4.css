@@ -1,0 +1,167 @@
+/* line 1, /home/users/dave/cms/app/assets/stylesheets/scaffolds.css.scss */
+pre {
+  background-color: #eee;
+  padding: 10px;
+  font-size: 11px;
+}
+
+/* line 6, /home/users/dave/cms/app/assets/stylesheets/scaffolds.css.scss */
+#notice {
+  color: green;
+}
+
+/* line 9, /home/users/dave/cms/app/assets/stylesheets/scaffolds.css.scss */
+.field_with_errors {
+  padding: 2px;
+  background-color: red;
+  display: table;
+}
+
+/* line 14, /home/users/dave/cms/app/assets/stylesheets/scaffolds.css.scss */
+#error_explanation {
+  width: 450px;
+  border: 2px solid red;
+  padding: 7px;
+  padding-bottom: 0;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+}
+/* line 21, /home/users/dave/cms/app/assets/stylesheets/scaffolds.css.scss */
+#error_explanation h2 {
+  text-align: left;
+  font-weight: bold;
+  padding: 5px 5px 5px 15px;
+  font-size: 12px;
+  margin: -7px;
+  margin-bottom: 0px;
+  background-color: #c00;
+  color: #fff;
+}
+/* line 30, /home/users/dave/cms/app/assets/stylesheets/scaffolds.css.scss */
+#error_explanation ul li {
+  font-size: 12px;
+  list-style: square;
+}
+body
+{
+	width: 900px;
+	margin: auto;
+	background-color: #343434;
+	padding-top:  20px;
+}
+
+#frame
+{
+	background-color: white;
+	clear: both;
+}
+
+
+#header
+{
+	background-color: maroon;
+	color: white;
+	border-bottom: 1px solid black;
+	padding: 2px;
+	
+}
+
+#columnLeft {
+	float: left;
+	background-color: white;
+	width: 150px;
+	padding: 5px;
+}
+
+#columnAll {
+	background-color: white;
+	padding: 5px;
+}
+
+#columnRight
+{
+	margin-left: 175px;
+	background-color: white;
+	padding: 5px;
+}
+
+#footer
+{
+	clear: both;
+	background-color: #D3D3D3;
+	border-top: 1px solid black;
+	padding: 5px;
+	text-align: right;
+}
+
+#login
+{
+	color:  white;
+	text-align:  right;
+}
+
+#login a
+{
+	color:  white;
+}
+
+a.navlink
+{
+	padding: 10px;
+}
+
+a.navlink:link
+{
+	color: white;
+	text-decoration:none;
+}
+
+a.navlink:visited
+{
+	color: white;
+	text-decoration:none;
+}
+
+.notice {
+  color: green; 
+}
+
+.alert {
+  color: red; 
+}
+
+#navlist li
+{
+	list-style-type:none;
+	padding: 5px;
+}
+
+.left {
+	float: left;
+}
+
+.right {
+	float: right;
+}
+
+.image-center {
+	display: block;
+	margin-left: auto;
+        margin-right: auto
+}
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+
+
+ */
+
