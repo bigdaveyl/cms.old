@@ -3,8 +3,8 @@ FactoryBot.define do
     username { FFaker::Internet.user_name }
     email { FFaker::Internet.email }
     password { FFaker::Internet.password }
-    admin true
-    blogger true
-    photos true
+    admin { true }
+    blogger { true }
+    photosa { true }
   end
 end

@@ -1,7 +1,7 @@
 # Single server example
-role :app, %w{webpages@ec2-34-207-254-66.compute-1.amazonaws.com}
-role :web, %w{webpages@ec2-34-207-254-66.compute-1.amazonaws.com}
-role :db,  %w{webpages@ec2-34-207-254-66.compute-1.amazonaws.com}
+role :app, %w{webpages@206.81.13.145}
+role :web, %w{webpages@206.81.13.145}
+role :db,  %w{webpages@206.81.13.145}
 
 set :ssh_options, {
   forward_agent: false,
